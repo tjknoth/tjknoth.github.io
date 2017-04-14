@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Data.List.Split
 
 
 --------------------------------------------------------------------------------
@@ -15,8 +16,9 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
-        route   $ setExtension "html"
+    match "pages/*" $ do
+        -- For example: route /pages/projects.md to /projects.html
+        route   $ customRoute $ (++ ".html") . head . (splitOn ".") . concat . tail . (splitOn "/") . toFilePath
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
@@ -28,6 +30,13 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    match "index.md" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+
+    {--
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -41,8 +50,15 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
+    --}
 
+    match "index.md" $ do
+      route $ setExtension "html"
+      compile $ pandocCompiler
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
+          >>= relativizeUrls
 
+    {--
     match "index.html" $ do
         route idRoute
         compile $ do
@@ -56,6 +72,8 @@ main = hakyll $ do
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
+    --}
+
 
     match "templates/*" $ compile templateBodyCompiler
 
