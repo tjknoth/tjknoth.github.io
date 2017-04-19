@@ -2,6 +2,6 @@
 title: Contact
 ---
 
-Email: tknoth *at* eng *dot* ucsd *dot* edu
+Email: tknoth *at* ucsd *dot* edu
 
 Office:
