@@ -18,7 +18,7 @@ main = hakyll $ do
 
     match "pages/*" $ do
         -- For example: route /pages/projects.md to /projects.html
-        route   $ customRoute $ (++ ".html") . head . (splitOn ".") . concat . tail . (splitOn "/") . toFilePath
+        route   . customRoute $ (++ ".html") . head . (splitOn ".") . concat . tail . (splitOn "/") . toFilePath
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
@@ -30,8 +30,8 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    match "index.md" $ do
-        route $ setExtension "html"
+    match "index.html" $ do
+        route $ idRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
@@ -76,6 +76,10 @@ main = hakyll $ do
 
 
     match "templates/*" $ compile templateBodyCompiler
+
+    match "files/*" $ do
+      route . customRoute $ concat . tail . (splitOn "/") . toFilePath
+      compile copyFileCompiler
 
 
 --------------------------------------------------------------------------------
