@@ -1,14 +1,58 @@
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
 body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
-    width: 600px;
+    width: 1200px;
 }
 
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
+    height: 70px;
+    position: relative;
+}
+
+div#home {
+  float: left;
+  text-align: bottom;
+  position: absolute;
+  bottom: 0;
+}
+
+div#home a {
+  color: black;
+  font-size: 48px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+div#header #navigation {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+div#header #navigation a {
+    color: black;
+    font-size: 18px;
+    margin-left: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+div.nav {
+  padding-bottom: 12px;
 }
 
 
@@ -24,27 +68,6 @@ div#subheader-info{
 div#subheader-photo{
   margin: auto;
   float: right;
-}
-
-div#logo a {
-    color: black;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-div#header #navigation {
-    text-align: right;
-}
-
-div#header #navigation a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 div#footer {
@@ -74,11 +97,7 @@ img[alt="Portrait"] {
   width: 200px;
 }
 
-img[alt="github"] {
-  width: 20px;
+img.social {
+  width: 16px;
   margin: auto;
-}
-
-img[alt="facebook"] {
-  width: 20px;
 }
