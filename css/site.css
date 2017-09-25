@@ -6,18 +6,34 @@ html {
 }
 
 body {
-    color: black;
-    font-size: 16px;
-    margin: 0px auto 0px auto;
-    width: 1200px;
+  color: black;
+  font-size: 16px;
+  margin: 0px auto 0px auto;
+  width: 1200px;
+  line-height: 1.7;
+  background: #fefefe;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 div#header {
-    border-bottom: 2px solid black;
-    margin-bottom: 30px;
-    padding: 12px 0px 12px 0px;
-    height: 70px;
-    position: relative;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+  padding: 12px 0px 12px 0px;
+  height: 70px;
+  position: relative;
+  line-height: 1.15;
 }
 
 div#home {
@@ -30,25 +46,23 @@ div#home {
 div#home a {
   color: black;
   font-size: 48px;
-  text-decoration: none;
   margin-bottom: 10px;
 }
 
 div#header #navigation {
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 div#header #navigation a {
-    color: black;
-    font-size: 18px;
-    margin-left: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    height: 100%;
+  color: black;
+  font-size: 18px;
+  margin-left: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  height: 100%;
 }
 
 div.nav {
@@ -70,13 +84,32 @@ div#subheader-photo{
   float: right;
 }
 
+div#content {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto 0;
+  vertical-align: bottom;
+}
+
 div#footer {
-    border-top: solid 2px black;
-    color: #555;
-    font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
-    text-align: right;
+  border-top: solid 2px black;
+  color: #555;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 12px 0px 12px 0px;
+  text-align: right;
+  height: 70px;
+}
+
+li.blog-post a {
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  margin-top: 2em;
+  font-weight: bold;
 }
 
 h1 {
@@ -87,17 +120,60 @@ h2 {
     font-size: 20px;
 }
 
-div.info {
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
 }
 
-img[alt="Portrait"] {
+
+img#portrait {
   width: 200px;
 }
 
-img.social {
-  width: 16px;
-  margin: auto;
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+pre, code, kbd, samp {
+  color: #000;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 0.98em;
+}
+
+table {
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }

@@ -1,7 +1,6 @@
 ---
 title: Projects
 ---
-
 # Projects
 
 I'm interested in leveraging programming languages to make programming easier and more accessible.

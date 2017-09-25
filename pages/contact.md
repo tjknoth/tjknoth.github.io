@@ -1,7 +1,7 @@
 ---
 title: Contact
 ---
-
+<link rel="stylesheet" href="/css/site.css">
 ##Contact
 
 
