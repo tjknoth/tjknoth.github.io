@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
+import           Data.Monoid (mappend) 
 import           Hakyll
 import           Data.List.Split
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyll {--(conf $ readFile "deployScript")--} $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -87,3 +87,6 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+conf :: String -> Configuration
+conf s = defaultConfiguration { deployCommand = s } 
