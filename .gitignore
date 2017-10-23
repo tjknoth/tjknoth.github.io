@@ -1,8 +1,9 @@
 .cabal-sandbox
 cabal.sandbox.config
 dist/
-_cache
-_site
+_cache/
+_site/
+.stack-work/
 
 # ignore resume and image files
 /files/*
