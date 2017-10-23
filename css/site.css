@@ -9,7 +9,7 @@ body {
   color: black;
   font-size: 16px;
   margin: 0px auto 0px auto;
-  width: 1200px;
+  width: 800px;
   line-height: 1.7;
   background: #fefefe;
 }
@@ -76,7 +76,7 @@ div#subheader {
 
 div#subheader-info{
   margin: auto;
-  //float: left
+  float: left
 }
 
 div#subheader-photo{
@@ -130,6 +130,7 @@ blockquote {
 
 img#portrait {
   width: 200px;
+  float: right;
 }
 
 img {
