@@ -1,4 +1,4 @@
-# Copied from https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html
+# inspired by https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html
 
 # Temporarily store uncommited changes
 git stash
@@ -7,8 +7,7 @@ git stash
 git checkout develop
 
 # Build new files
-stack exec myblog clean
-stack exec myblog build
+cabal run rebuild
 
 # Get previous files
 git fetch --all

@@ -7,7 +7,9 @@ import           Data.List.Split
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll {--(conf $ readFile "deployScript")--} $ do
+main = do
+  configStr <- readFile "src/deployScript"
+  hakyllWith (conf configStr) $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
