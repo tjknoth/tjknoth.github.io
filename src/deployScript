@@ -1,3 +1,4 @@
+commit="Publish $(date +%Y-%m-%d)"
 git stash
 git checkout develop
 cabal run rebuild
@@ -5,7 +6,7 @@ git fetch --all
 git checkout -b master --track origin/master
 cp -a _site/. .
 git add . 
-git commit -m "Publish."
+git commit -m "${commit}"
 git push origin master:master
 git checkout develop
 git branch -D master
