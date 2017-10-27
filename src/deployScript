@@ -11,7 +11,7 @@ cabal run rebuild
 
 # Get previous files
 git fetch --all
-git checkout -b master --track origin/master
+git checkout -b master 
 
 # Overwrite existing files with new files
 cp -a _site/. .
