@@ -1,5 +1,3 @@
-# inspired by https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html
-
 # Temporarily store uncommited changes
 git stash
 
