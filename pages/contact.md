@@ -5,6 +5,6 @@ title: Contact
 ##Contact
 
 
-Email: tknoth *at* ucsd *dot* edu
+Email: tknoth@ucsd.edu
 
-Office:
+Office: CSE 3148

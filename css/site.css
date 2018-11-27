@@ -72,11 +72,12 @@ div.nav {
 
 div#subheader {
   margin-bottom: 30px;
+  margin-bottom: 5em;
 }
 
 div#subheader-info{
   margin: auto;
-  float: left
+  float: left;
 }
 
 div#subheader-photo{
@@ -108,7 +109,7 @@ li.blog-post a {
 
 h1, h2, h3, h4, h5, h6 {
   color: #111;
-  margin-top: 3em;
+  margin-top: 1em;
   font-weight: bold;
 }
 
