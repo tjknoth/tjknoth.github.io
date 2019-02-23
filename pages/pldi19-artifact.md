@@ -18,7 +18,12 @@ Having installed Docker, get the image with
 
 and run it with 
 
-```docker run -it tjknoth/resyn```
+```docker run -it tjknoth/resyn bash```
+
+This will start a terminal in the testing directory. To run the tests, execute
+
+```stack build --extra-include-dirs=/opt/z3-4.7.1-x64-debian-8.10/include/
+--extra-lib-dirs=/opt/z3-4.7.1-x64-debian-8.10/bin/ && python3 run_all.py```
 
 ## Reproducing Results
 1. Install dependencies:
@@ -32,9 +37,12 @@ and run it with
     ```hg clone https://bitbucket.org/tjknoth/resyn -r pldi-artifact```  
     ```cd resyn```
 
-3. Build:
+3. Build (assuming the z3 binary and header files are on your path):
 
     ```stack build```
+
+    If necessary, use the flags ```--extra-include-dirs``` and ```--extra-lib-dirs``` to link
+    z3 to stack.
 
 4. Run experiments:
 
