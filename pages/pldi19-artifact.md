@@ -29,7 +29,7 @@ and run it with
 
 2. Clone repository:
 
-    ```hg clone https://bitbucket.org/tjknoth/resyn -r pldi19-submission```  
+    ```hg clone https://bitbucket.org/tjknoth/resyn -r pldi-artifact```  
     ```cd resyn```
 
 3. Build:
