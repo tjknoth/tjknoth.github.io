@@ -31,7 +31,9 @@
 <p>Having installed Docker, get the image with</p>
 <p><code>docker pull tjknoth/resyn</code></p>
 <p>and run it with</p>
-<p><code>docker run -it tjknoth/resyn</code></p>
+<p><code>docker run -it tjknoth/resyn bash</code></p>
+<p>This will start a terminal in the testing directory. To run the tests, execute</p>
+<p><code>stack build --extra-include-dirs=/opt/z3-4.7.1-x64-debian-8.10/include/ --extra-lib-dirs=/opt/z3-4.7.1-x64-debian-8.10/bin/ &amp;&amp; python3 run_all.py</code></p>
 <h2 id="reproducing-results">Reproducing Results</h2>
 <ol style="list-style-type: decimal">
 <li><p>Install dependencies:</p>
@@ -41,8 +43,9 @@
 <li><p>Clone repository:</p>
 <p><code>hg clone https://bitbucket.org/tjknoth/resyn -r pldi-artifact</code><br />
 <code>cd resyn</code></p></li>
-<li><p>Build:</p>
-<p><code>stack build</code></p></li>
+<li><p>Build (assuming the z3 binary and header files are on your path):</p>
+<p><code>stack build</code></p>
+<p>If necessary, use the flags <code>--extra-include-dirs</code> and <code>--extra-lib-dirs</code> to link z3 to stack.</p></li>
 <li><p>Run experiments:</p>
 <p><code>cd test/pldi19 &amp;&amp; python3 run_all.py</code></p></li>
 <li><p>Compare results:</p>
