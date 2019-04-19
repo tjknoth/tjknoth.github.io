@@ -10,6 +10,7 @@ main :: IO ()
 main = do
   configStr <- readFile "src/deployScript"
   hakyllWith (conf configStr) $ do
+
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -32,13 +33,8 @@ main = do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    match "index.html" $ do
-        route $ idRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+    match "pubs/*" $ compile pandocCompiler
 
-    
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -52,30 +48,19 @@ main = do
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
-   
 
-    match "index.md" $ do
-      route $ setExtension "html"
-      compile $ pandocCompiler
-          >>= loadAndApplyTemplate "templates/default.html" defaultContext
-          >>= relativizeUrls
-
-    {--
     match "index.html" $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
+        route $ idRoute
+        compile $ do 
+          pubs <- loadAll "pubs/*"
+          let pubCtx = 
+                listField "publications" defaultContext (return pubs) `mappend`
+                defaultContext
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
-    --}
-
+          getResourceBody 
+             >>= applyAsTemplate pubCtx
+             >>= loadAndApplyTemplate "templates/default.html" pubCtx
+             >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
 

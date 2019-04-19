@@ -169,6 +169,15 @@ table td {
   vertical-align: top;
 }
 
+ul.pubs {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.pubs p {
+  margin-top: 0;
+}
+
 @media only screen and (min-width: 480px) {
   body {
     font-size: 14px;
