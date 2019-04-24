@@ -9,8 +9,8 @@ import           Text.Pandoc.Options
 --------------------------------------------------------------------------------
 main :: IO ()
 main = do
-  configStr <- readFile "src/deployScript"
-  hakyllWith (conf configStr) $ do
+  deploy <- readFile "src/deployScript"
+  hakyllWith (defaultConfiguration { deployCommand = deploy }) $ do
 
     match "images/*" $ do
         route   idRoute
@@ -79,9 +79,6 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
-
-conf :: String -> Configuration
-conf s = defaultConfiguration { deployCommand = s } 
 
 pandocMathCompiler :: Compiler (Item String)
 pandocMathCompiler = 
