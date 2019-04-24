@@ -2,7 +2,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend) 
 import           Hakyll
-import           Data.List.Split
+import           Data.List.Split (splitOn)
+import           Text.Pandoc.Options
 
 
 --------------------------------------------------------------------------------
@@ -28,7 +29,7 @@ main = do
 
     match (fromGlob "posts/*" .&&. complement "posts/post_template.md") $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -81,3 +82,16 @@ postCtx =
 
 conf :: String -> Configuration
 conf s = defaultConfiguration { deployCommand = s } 
+
+pandocMathCompiler :: Compiler (Item String)
+pandocMathCompiler = 
+  let mathExts    = [ Ext_tex_math_dollars, 
+                      Ext_tex_math_double_backslash,
+                      Ext_latex_macros ]
+      defaultExts = writerExtensions defaultHakyllWriterOptions
+      newExts     = foldr enableExtension defaultExts mathExts
+      writerOpts  = defaultHakyllWriterOptions {
+                      writerExtensions = newExts,
+                      writerHTMLMathMethod = MathJax ""
+                    }
+  in pandocCompilerWith defaultHakyllReaderOptions writerOpts

@@ -8,5 +8,6 @@ executable site
   build-depends:    split
                   , base == 4.*
                   , hakyll >= 4.9
+                  , pandoc
   ghc-options:      -threaded
   default-language: Haskell2010
