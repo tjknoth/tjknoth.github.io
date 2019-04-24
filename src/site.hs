@@ -33,7 +33,11 @@ main = do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    match "pubs/*" $ compile pandocCompiler
+    match "publications/*.md" $ compile pandocCompiler
+
+    match "publications/*.pdf" $ do 
+        route idRoute
+        compile copyFileCompiler
 
     create ["archive.html"] $ do
         route idRoute
@@ -50,9 +54,9 @@ main = do
                 >>= relativizeUrls
 
     match "index.html" $ do
-        route $ idRoute
+        route idRoute
         compile $ do 
-          pubs <- loadAll "pubs/*"
+          pubs <- loadAll "publications/*.md"
           let pubCtx = 
                 listField "publications" defaultContext (return pubs) `mappend`
                 defaultContext
