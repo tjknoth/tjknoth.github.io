@@ -4,6 +4,7 @@ dist/
 _cache/
 _site/
 .stack-work/
+stack.yaml.lock
 
 # ignore resume and image files
 /files/*

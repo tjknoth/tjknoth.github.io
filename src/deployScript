@@ -1,7 +1,8 @@
 commit="Publish $(date +%Y-%m-%d)"
 git stash
 git checkout develop
-cabal run rebuild
+stack build
+stack exec site build
 git fetch --all
 git checkout -b master --track origin/master
 cp -a _site/. .
