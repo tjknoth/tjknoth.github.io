@@ -12,10 +12,6 @@ main = do
   deploy <- readFile "src/deployScript"
   hakyllWith (defaultConfiguration { deployCommand = deploy }) $ do
 
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
-
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
@@ -69,8 +65,9 @@ main = do
 
     match "templates/*" $ compile templateBodyCompiler
 
-    match "files/*" $ do
-      route . customRoute $ concat . tail . (splitOn "/") . toFilePath
+    match "raw/*" $ do
+      -- route . customRoute $ concat . tail . (splitOn "/") . toFilePath
+      route idRoute
       compile copyFileCompiler
 
 
