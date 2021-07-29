@@ -32,6 +32,16 @@ main = do
 
     match "publications/*.md" $ compile pandocCompiler
 
+    match "teaching/**.md" $ do
+      route $ setExtension "html"
+      compile $ pandocCompiler 
+          >>= loadAndApplyTemplate "templates/cse20.html" defaultContext
+          >>= relativizeUrls
+
+    match "teaching/*/raw/*" $ do
+      route idRoute
+      compile copyFileCompiler
+   
     match "publications/*.pdf" $ do 
         route idRoute
         compile copyFileCompiler
