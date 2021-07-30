@@ -4,7 +4,7 @@ title: Lectures
 
 # Lectures
 
-| Date | Topic | Reading | Notes |
+| Date | Topic | Reading | Material |
 | ---- | ----- | --------| -------- |
 | 8.2  | Intro / Mathematical objects | | |
 | 8.3  | Numbers | Rosen 4.1, 4.2 | |

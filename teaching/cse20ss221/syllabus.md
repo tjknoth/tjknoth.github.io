@@ -26,6 +26,7 @@ If you work together, do _not_ split up the work -- collaborate on all problems.
 
 You get a total of three late days, allocated between all assignments as you
 like.
+Homework submissions should be typed.
 
 **Standards for evaluation:**
 Your assignments in this class will be evaluated not only on the correctness of your answers, 
@@ -39,8 +40,8 @@ This means that unless it says: "no justification necessary" then we expect a wr
 
 ## Project
 
-We will have a small three-part project. The goal is to practice technical
-writing. There will be three deadlines:
+We will have a small three-part project, done individually.
+There will be three deadlines:
 
 * Part 1: 8.11.21 at 11:59pm
 * Part 2: 8.18.21 at 11:59pm
