@@ -12,7 +12,7 @@ Your grade will be determined by:
 * Homework: 35% 
 * Project: 15% 
 * Midterm: 15%
-* Final: 30%. The final will be _in-person_, Friday 9.3.21 at 3pm 
+* Final: 30%. The final will be _in-person_, Friday 9.3.21 at 3pm (location TBA)
 
 ## Homework
 

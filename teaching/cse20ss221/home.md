@@ -9,9 +9,8 @@ title: CSE 20
 
 ## Staff
 * Instructor: [Tristan Knoth](/) (tknoth@ucsd.edu)
-* TA: Jor-El Briones (jbriones@ucsd.edu)
-* Tutor: David Cao (dmcao@ucsd.edu)
-
+* TA: Jor-El Briones
+* Tutor: David Cao
 
 ## Overview
 Welcome to CSE20! If you ever wondered "What sort of mathematics do I need for computer science?", this course will provide some of the answers. In particular, you will have the opportunity to learn basic concepts about algorithms, computer arithmetic, number systems, logic, proofs, modular arithmetic, recursion and induction, among others. These are some of the essential ingredients in the toolkit of every computer scientist.
