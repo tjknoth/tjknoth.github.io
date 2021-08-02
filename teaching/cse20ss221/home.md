@@ -4,8 +4,8 @@ title: CSE 20
 # CSE 20: Summer Session 2, 2021
 
 ## Details
-* Lecture: MTWR, 2-3:20pm, PCNYH 109
-* Discussion: TR, 4-4:50pm, PCNYH 109
+* Lecture: MTWR, 2-3:20pm, Warren West outdoor space 
+* Discussion: TR, 4-4:50pm (virtual)
 
 ## Staff
 * Instructor: [Tristan Knoth](/) (tknoth@ucsd.edu)
