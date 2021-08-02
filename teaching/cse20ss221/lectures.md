@@ -6,7 +6,7 @@ title: Lectures
 
 | Date | Topic | Reading | Material | Review Quiz |
 | ---- | ----- | --------| -------- | --- |
-| 8.2  | Intro / Mathematical objects | | | |
+| 8.2  | Intro / Mathematical objects | | | [quiz](https://forms.gle/Yt5ZGDgqX4QLRBjY7) |
 | 8.3  | Numbers | Rosen 4.1, 4.2 | | |
 | 8.4  | Circuits / Truth tables | Rosen 1.2, 1.1, 1.3 | | |
 | 8.5  | Logic | Rosen 1.1 | | |
