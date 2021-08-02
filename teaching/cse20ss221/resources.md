@@ -4,7 +4,7 @@ title: Resources
 # Resources
 
 ## Links
-* [Piazza](piazza.com/ucsd/summer2021/cse20ss2)
+* [Piazza](https://piazza.com/ucsd/summer2021/cse20ss2)
 * [Give me feedback](https://forms.gle/v3xfMm7jDESZGetz6)
 
 ## Textbook
