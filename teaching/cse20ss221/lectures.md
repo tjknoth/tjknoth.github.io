@@ -8,7 +8,7 @@ title: Lectures
 | ---- | ----- | --------| -------- | --- |
 | 8.2  | Intro / Mathematical objects | | [slides](https://drive.google.com/file/d/1iyzrXfYFTbCY_dDOxpue_kYYuor8Yx-m/view?usp=sharing) | [quiz](https://forms.gle/Yt5ZGDgqX4QLRBjY7) |
 | 8.3  | Numbers | Rosen 4.1, 4.2 | [slides](https://drive.google.com/file/d/1srazW-8E-JgPEyznz6nx-31HxUcKCfnY/view?usp=sharing) | [quiz](https://forms.gle/c719y8qLBzsHeJUr6) |
-| 8.4  | Circuits / Truth tables | Rosen 1.2, 1.1, 1.3 | | |
+| 8.4  | Circuits / Truth tables | Rosen 1.2, 1.1, 1.3 | [slides](https://drive.google.com/file/d/10orR-Tsn9XDaLUpWdEpHyz5kFpUvKzbL/view?usp=sharing) | [quiz](https://forms.gle/Rq961EmaWiiqmgbz5) |
 | 8.5  | Logic | Rosen 1.1 | | |
 | 8.9  | Quantifiers | Rosen 1.4, 1.5 | | |
 | 8.10 | Direct proofs | Rosen 1.7, 1.8 | | |
