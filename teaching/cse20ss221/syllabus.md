@@ -28,6 +28,8 @@ You get a total of three late days, allocated between all assignments as you
 like.
 Homework submissions should be typed.
 
+We will drop the lowest homework score.
+
 **Standards for evaluation:**
 Your assignments in this class will be evaluated not only on the correctness of your answers, 
 but on your ability to present your ideas clearly and logically. 
