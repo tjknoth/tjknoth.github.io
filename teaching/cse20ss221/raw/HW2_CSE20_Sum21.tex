@@ -1,0 +1,261 @@
+\documentclass[10pt,letterpaper,unboxed,cm]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumerate, comment}
+\usepackage{adjustbox}
+
+\newcommand{\st}{~\mid~}
+\newcommand{\ind}{$~~~~~$}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm,algorithmicx}
+\usepackage{amsmath,amssymb}
+
+
+\begin{document}
+
+
+\hfill{CSE 20 Summer 2021}
+
+\hfill{Homework 2}
+
+\hfill{Due date: Sunday, August 15, 2021 at 11:59pm}
+
+\begin{center}
+\begin{minipage}[t]{6in}
+\rule{\linewidth}{2pt}
+
+{\sc Topics} Quantifiers, Proofs and Sets
+\newline
+
+{\sc Reading} 
+\begin{itemize}
+\item
+Sections 1.4, 1.5, 1.7, 1.8, 2.1, 2.2
+\end{itemize}
+
+{\sc Key Concepts} Predicates, domain of discourse/universe, universal quantifier, existential quantifier, negated quantifiers, nested quantifiers, Proof strategies, (counter)example, contrapositive proof, proof by contradiction, sets, subset, empty set union, intersection.
+\newline
+
+\rule{\linewidth}{2pt}
+\end{minipage} \hfill
+
+\end{center}
+
+
+
+\textbf{In this class, unless the instructions explicitly say otherwise, you are required to justify all your answers.}
+
+ 
+
+\begin{enumerate}
+ 
+    
+\item ({\bf 20 points})
+For each statement, translate it to the form:
+$$\forall x~(\underline{~~~~~~~~}~)$$
+or
+$$\exists x~(\underline{~~~~~~~~}~)$$
+
+using the predicates given and state the domain. (note, you are expected to write your answer without a $\neg$ before the quantifier.)
+\begin{quote}
+For example: ``All dinosaurs are extinct"
+\begin{itemize}
+\item
+$E(x)$ is ``$x$ is extinct"
+\end{itemize}
+Then my answer would be:
+$$\forall x (E(x))$$ with the domain defined to be the set of all dinosaurs.
+\end{quote}
+    
+\begin{enumerate}
+\item
+Every real number is positive or negative or zero.
+
+\begin{itemize}
+\item
+$P(x)$ is ``$x$ is positive"
+\item
+$N(x)$ is ``$x$ is negative"
+\item
+$Z(x)$ is ``$x$ is zero"
+\end{itemize}
+\item
+There are no irrational numbers that are integers
+\begin{itemize}
+\item
+$I(x)$ is ``$x$ is an integer."
+\end{itemize}
+\item
+It is not the case that all cats are friendly.
+\begin{itemize}
+\item
+$F(x)$ is ``$x$ is friendly."
+\end{itemize}
+\item
+The number 4,552,003 is not equal to the square of any integer.
+\begin{itemize}
+\item
+$A(x)$ is ``$x^2=4,552,003$."
+\end{itemize}
+\item
+The number 1 is a factor of any integer.
+\begin{itemize}
+\item
+$O(x)$ is ``1 is a factor of $x$."
+\end{itemize}
+\item
+I have a cup of coffee every morning.
+\begin{itemize}
+\item
+$C(x)$ is ``I drink coffee on morning $x$."
+\end{itemize}
+\item
+There is a real number between 2 and 3 that is the square root of 8.
+\begin{itemize}
+\item
+$E(x)$ is ``$x^2=8$."
+\end{itemize}
+\item
+The square of any rational number is rational.
+\begin{itemize}
+\item
+$Q(x)$ is ``$x$ is rational."
+\end{itemize}
+\item
+$-1$ is not the square of any real number.
+\begin{itemize}
+\item
+$S(x)$ is ``$x^2=-1$."
+\end{itemize}
+\item
+Not all rational numbers are integers.
+\begin{itemize}
+\item
+$I(x)$ is ``$x$ is an integer."
+\end{itemize}
+\end{enumerate}    
+    
+    
+ \item({\bf 16 points})
+For each quantified statement and each domain, determine if it is true or false. If it is true then just say true. If it is false, then prove that it is false.
+
+\begin{enumerate}
+\item
+$\forall x\exists y (x>y)$
+\begin{enumerate}
+\item
+Domain: $\mathbb{Z}$ (the set of all integers.)
+\item
+Domain: $\mathbb{Z}^+$ (the set of all positive integers.)
+\item
+Domain: $\mathbb{Z}^-$ (the set of all negative integers.)
+\item
+Domain: $\mathbb{Z}^*$ (the set of all non-zero integers.)
+\end{enumerate}
+\item
+$\forall x\forall y \exists z((x<y)\to (x<z<y))$
+\begin{enumerate}
+\item
+Domain: $\mathbb{Z}$ (the set of all integers.)
+\item
+Domain: $\mathbb{Q}$ (the set of all rational numbers.)
+\item
+Domain: $\mathbb{R}$ (the set of all real numbers.)
+\item
+Domain: $\mathbb{R}^*$ (the set of all non-zero real numbers.)
+\end{enumerate}
+\item
+$\forall x\exists y (x/y=1)$
+\begin{enumerate}
+\item
+Domain: $\mathbb{Z^*}$ (the set of all non-zero integers.)
+\item
+Domain: $\mathbb{Q^*}$ (the set of all non-zero rational numbers.)
+\item
+Domain: $\mathbb{R}^*$ (the set of all non-zero real numbers.)
+\item
+Domain: $\mathbb{R}-\mathbb{Q}$ (the set of all irrational numbers.)
+\end{enumerate}
+\item
+$\forall x\exists y (x=y^2)$
+\begin{enumerate}
+\item
+Domain: $\mathbb{Z^+}$ (the set of all positive integers.)
+\item
+Domain: $\mathbb{R}-\mathbb{Q}$ (the set of all irrational numbers.)
+\item
+Domain: $\mathbb{R}$ (the set of all real numbers.)
+\item
+Domain: $\mathbb{R}^+$ (the set of all positive real numbers.)
+\end{enumerate}
+\end{enumerate}
+
+\item {\bf (20 points)}
+Prove the following statements using any proof strategy.
+\begin{enumerate}
+\item
+For all integers $a,b,c$, if $a|b$ and $a|c$ then $a|(b+c)$.
+\item
+For all integers $a,b,c$, if $a+b$ is even and $b+c$ is even then $a+c$ is even.
+\item
+For all integers $n$, $n^3$ is a multiple of 9 OR $n^3+1$ is a multiple of 9 or $n^3-1$ is a multiple of 9.\\
+(\emph{Hint: partition the set of all integers into {\bf Case 1:} the set of all integers of the form $3k$ for some integer $k$, {\bf Case 2:} the set of all integers of the form $3k+1$ for some integer $k$ and {\bf Case 3:} the set of all integers of the form $3k-1$ for some integer $k$.})
+\item
+For all positive real numbers $a$ and $b$, $\sqrt{a+b}\neq \sqrt{a} + \sqrt{b}$.
+
+\end{enumerate}
+\item {\bf (20 points)}
+For each of the following statements, determine if it is true or false. If it is true, then provide a proof. If it is false then disprove it.
+\begin{enumerate}
+\item
+For all sets $A,B$, $A\cap B\subseteq A\cup B$.
+\item
+For all sets $A,B$, if $A\cap B=\emptyset$ then $A\times B=\emptyset$.
+\item
+For all sets $A,B,C$, if $A\subseteq B$ then $A\cap B\subseteq B\cap C$
+\item
+For sets $A\subseteq \mathbb{R}$ and $B\subseteq \mathbb{R}$. If $A$ is closed under addition and $B$ is closed under addition then $A\cap B$ is closed under addition.
+\end{enumerate}
+\item {\bf (20 points)}
+For each pair of sets, determine if they are {\bf disjoint, equal, proper subset} or {\bf none of the above.}
+\begin{enumerate}
+\item
+\begin{itemize}
+\item
+$A=\{x\in\mathbb{Z}~|~x^2- x\geq 0\}$
+\item
+$B=\{x\in\mathbb{Z}~|~x-1\geq 0\}$
+\end{itemize}
+\item
+\begin{itemize}
+\item
+$A=\{x\in\mathbb{Z}~|~x^2\in \mathbb{Z}\}$
+\item
+$B=\mathbb{Z}^{\geq 0}$
+\end{itemize}
+\item
+\begin{itemize}
+\item
+$A=\{(x,y)\in\mathbb{Z}\times\mathbb{Z}~|~\text{$xy$ is odd}\}$
+\item
+$B=\{(x,y)\in\mathbb{Z}\times\mathbb{Z}~|~\text{$x$ is odd and $y$ is odd}\}$
+\end{itemize}
+\item
+\begin{itemize}
+\item
+$A=\mathbb{R}\times\mathbb{Q}$
+\item
+$B=\mathbb{Q}\times\mathbb{R}$
+\end{itemize}
+\item
+\begin{itemize}
+\item
+$A=\mathcal{P}(\emptyset)$
+\item
+$B=\{\emptyset\}$
+\end{itemize}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
