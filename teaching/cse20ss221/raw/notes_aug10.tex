@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Supplemental Lecture Notes}
+\date{August 10, 2021}
+\author{Tristan Knoth}
+
+\begin{document}
+\maketitle
+
+This document contains (semi) formally written versions of some proofs done in lecture
+on August 10.
+It should serve as one example of how to write a proof.
+
+\subsection*{Slide 30}
+
+\textit{Claim:} If $n \in \mathbb{Z}$ is even, then so is $n^2$
+\begin{proof}
+Let $n \in \mathbb{Z}$ be arbitrary.
+Suppose $n$ is even.
+By definition, there exists $k \in \mathbb{Z}$ such that
+$n = 2k$.
+Thus, $n^2 = 4k^2 = 2(2k^2)$.
+Since the integers are closed under multiplication, $2k^2$ is an integer.
+Thus, we know that $n^2$ is even by definition.
+\end{proof}
+
+\subsection*{Slide 31}
+
+\textit{Claim:} If $n \in \mathbb{Z}$ is odd, then so is $n^2$
+\begin{proof}
+Let $n \in \mathbb{Z}$ be arbitrary.
+Suppose $n$ is odd. 
+Then by definition there exists an integer $k$ such that $n = 2k + 1$.
+Thus, we have 
+\begin{align*}
+  n^2 &= (2k + 1)^2 \\
+  &= 2k^2 + 4k + 1 \\
+  &= 2(k^2 + 4k) + 1
+\end{align*}
+Since the integers are closed under multiplication and addition,
+$k^2 + 4k$ is also an integer and $n^2$ is therefore odd by definition.
+\end{proof}
+
+\subsection*{Slide 35}
+
+\textit{Claim:} If $x^2 - 6x + 5$ is even, then $x$ is odd.
+\begin{proof}
+We consider instead the contrapositive: for all integers $x$, if $x$ is even,
+then $x^2 - 6x + 5$ is odd.
+Let $x \in \mathbb{Z}$ be arbitrary.
+Suppose $x$ is even.
+By definition, there exists an integer $k$ such that $x = 2k$.
+Then we have
+  \begin{align*}
+    x^2 - 6x + 5 &= (2k)^2 - 6(2k) + 5 \\
+    &= 4k^2 - 12k + 5 \\
+    &= 2(2k^2 - 6k + 2) + 1
+  \end{align*}
+Since the integers are closed under addition, subtraction, and multiplication,
+we know $2k^2 - 6x + 2)$ is an integer.
+Therefore, we have that that
+$x^2 - 6x + 5$ is odd by definition..
+\end{proof}
+
+\subsection*{Slide 34}
+
+\textit{Claim:} For integers $n,a,b$, if $n \nmid ab$ then $n \nmid a$ and $n
+\nmid b$.
+
+\begin{proof}
+  Let $n,a,b \in \mathbb{Z}$ be arbitrary. 
+  We instead prove the contrapositive of our claim: 
+  if $n \mid a$ or $n \mid b$, then $n \mid ab$.
+  We must consider two cases.
+  First, suppose $n \mid a$.
+  Then, by definition, there exists some $k \in \mathbb{Z}$ 
+  where $a = nk$.
+  Thus, $ab = nkb$.
+  Since the integers are closed under multiplication, $kb$ is an integer and $n \mid ab$ by definition.
+  For the second case, suppose instead that $n \mid b$.
+  Then, by definition, there exists some $k \in \mathbb{Z}$ 
+  where $b = nk$.
+  Thus, $ab = nka$.
+  Since the integers are closed under multiplication, $ka$ is an integer and $n \mid ab$ by definition.
+
+\end{proof}
+
+\end{document}
