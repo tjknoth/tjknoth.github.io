@@ -11,7 +11,7 @@ title: Lectures
 | 8.4  | Circuits / Truth tables | Rosen 1.2, 1.1, 1.3 | [slides](https://drive.google.com/file/d/10orR-Tsn9XDaLUpWdEpHyz5kFpUvKzbL/view?usp=sharing) | [quiz](https://forms.gle/Rq961EmaWiiqmgbz5) |
 | 8.5  | Logic | Rosen 1.1 | [slides](https://drive.google.com/file/d/11JXGmH9XjOA77eD1F7AQzop3IriOUb03/view?usp=sharing) | [quiz](https://forms.gle/JwYwT16ZhJPX97Dr9) |
 | 8.9  | Quantifiers | Rosen 1.4, 1.5 | [slides](https://drive.google.com/file/d/12GGFk2NIHXmY0svuiDAKG1bfHOj7vzqb/view?usp=sharing) | [quiz](https://forms.gle/Ea7ouTNwBKYDraYTA) |
-| 8.10 | Direct proofs | Rosen 1.7, 1.8 | [slides](https://drive.google.com/file/d/12VY5zVJurJNfaO14bOHO2g9Rs0FRKg45/view?usp=sharing) [notes](raw/notes_aug10.pdf) | [quiz](https://forms.gle/6MEvbAGnzwU4KyQ86) |
+| 8.10 | Direct proofs | Rosen 1.7, 1.8 | [[slides]](https://drive.google.com/file/d/12VY5zVJurJNfaO14bOHO2g9Rs0FRKg45/view?usp=sharing) [[notes]](raw/notes_aug10.pdf) [[whiteboard]](raw/whiteboard_lec6.pdf) | [quiz](https://forms.gle/6MEvbAGnzwU4KyQ86) |
 | 8.11 | Indirect proofs | Rosen 1.7, 1.8 | | |
 | 8.12 | Sets | Rosen 2.1, 2.2 | | |
 | 8.16 | Induction | Rosen 5.1, 5.2 | | |
