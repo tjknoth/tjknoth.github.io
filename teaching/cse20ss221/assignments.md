@@ -17,7 +17,7 @@ All assignments are due at 11:59pm.
 
 | Component | Due | 
 | ---  | --- |
-| Part 1 | 8.11.21 |
+| Part 1 | 8.12.21 |
 | Part 2 | 8.18.21 |
 | Part 3 | 9.1.21 |
 
