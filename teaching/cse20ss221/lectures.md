@@ -15,7 +15,7 @@ title: Lectures
 | 8.11 | Indirect proofs | Rosen 1.7, 1.8 | [[slides]](https://drive.google.com/file/d/1sm69ofXtI34OnXAnOCpJ6v6VpeKVXwiG/view?usp=sharing) [[notes]](raw/notes_aug11.pdf) [[whiteboard]](https://drive.google.com/file/d/1NNvWgAEiDWMLcV8cJpHy4GMdgu_-Rcru/view?usp=sharing) | [quiz](https://forms.gle/S4VadUn9YkxDCXnV7) |
 | 8.12 | Sets | Rosen 2.1, 2.2 | [[slides]](https://drive.google.com/file/d/13KHd-MzweDCPQ9xXFMcMxXewMcR-e5GH/view?usp=sharing) [[notes]](raw/notes_aug12.pdf) | [quiz](https://forms.gle/8iqtp4tGqcVnHqo78) |
 | 8.16 | Induction | Rosen 5.1, 5.2 | [[slides]](https://drive.google.com/file/d/14zRkAAqdD-tHzsqiuIai7xMMvZJT9_wb/view?usp=sharing) [[notes]](raw/notes_aug16.pdf) | [quiz](https://forms.gle/zehdXSUaG84pvwsJ8) |
-| 8.17 | Induction | Rosen 5.1, 5.2 | | |
+| 8.17 | Induction | Rosen 5.1, 5.2 | [[slides]](https://drive.google.com/file/d/15727E0hibbJnHAWIi09wayWzQmJVcILV/view?usp=sharing) [notes coming soon] | [quiz](https://forms.gle/aFFdGT8WESpmhuKX8) |
 | 8.18 | Induction | Rosen 5.1, 5.2 | | |
 | 8.19 | Functions / Cardinality | Rosen 2.3, 2.5 | | |
 | 8.23 | Midterm (weeks 1 + 2) | | | |
