@@ -16,7 +16,7 @@ title: Lectures
 | 8.12 | Sets | Rosen 2.1, 2.2 | [[slides]](https://drive.google.com/file/d/13KHd-MzweDCPQ9xXFMcMxXewMcR-e5GH/view?usp=sharing) [[notes]](raw/notes_aug12.pdf) | [quiz](https://forms.gle/8iqtp4tGqcVnHqo78) |
 | 8.16 | Induction | Rosen 5.1, 5.2 | [[slides]](https://drive.google.com/file/d/14zRkAAqdD-tHzsqiuIai7xMMvZJT9_wb/view?usp=sharing) [[notes]](raw/notes_aug16.pdf) | [quiz](https://forms.gle/zehdXSUaG84pvwsJ8) |
 | 8.17 | Induction | Rosen 5.1, 5.2 | [[slides]](https://drive.google.com/file/d/15727E0hibbJnHAWIi09wayWzQmJVcILV/view?usp=sharing) [[notes]](raw/notes_aug17.pdf) | [quiz](https://forms.gle/aFFdGT8WESpmhuKX8) |
-| 8.18 | Induction | Rosen 5.1, 5.2 | | |
+| 8.18 | Induction | Rosen 5.1, 5.2 | [[slides]](https://drive.google.com/file/d/15O9U6EZTtCP_FrGDP0yyBt4VvocfzC7S/view?usp=sharing) [notes to come] [[whiteboard]](https://drive.google.com/file/d/1Kv0MnGIP0bAjgxhSBvJ0VQODr2uGspID/view?usp=sharing) | [quiz](https://forms.gle/V6yECbhsD5qjAVNz5) |
 | 8.19 | Functions / Cardinality | Rosen 2.3, 2.5 | | |
 | 8.23 | Midterm (weeks 1 + 2) | | | |
 | 8.24 | Unountable sets | Rosen 2.5 | | |
