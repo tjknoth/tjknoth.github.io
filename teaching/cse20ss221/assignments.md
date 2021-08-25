@@ -9,7 +9,7 @@ title: Assignments
 | HW1: Number systems, circuits, truth tables | 8.8.21 | [[assignment]](raw/HW1_CSE20_Sum21.pdf) [[.tex]](raw/HW1_CSE20_Sum21.tex) |
 | HW2: Quantifiers, proofs, sets | 8.15.21 | [[assignment]](raw/HW2_CSE20_Sum21.pdf) [[.tex]](raw/HW2_CSE20_Sum21.tex) |
 | HW3: Induction, functions | 8.22.21 | [[assignment]](raw/HW3_CSE20_Sum21.pdf) |
-| HW4: Cardinality, relations, modular arithmetic | 8.29.21 | |
+| HW4: Cardinality, relations, modular arithmetic (no late days allowed!) | 8.29.21 |[[assignment]](raw/HW4_CSE20_Sum21.pdf) |
 
 All assignments are due at 11:59pm.
 
