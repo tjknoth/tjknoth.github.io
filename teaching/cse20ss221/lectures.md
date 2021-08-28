@@ -21,7 +21,7 @@ title: Lectures
 | 8.23 | Midterm (weeks 1 + 2) | | | |
 | 8.24 | Unountable sets | Rosen 2.5 | [[slides]](https://drive.google.com/file/d/17PV2PiX3_d6zMXOuycNWhn2eaQXxwsGn/view?usp=sharing) [[notes]](raw/notes_aug24.pdf) | [quiz](https://forms.gle/6RZ1g1xoP4dLUgNV7) |
 | 8.25 | Diagonalization / Equivalence relations | Rosen 9.1, 9.5 | [[slides]](https://drive.google.com/file/d/171sN57oWDSjH5QArK0CHXBDsJ3zFiI4C/view?usp=sharing) [[notes]](raw/notes_aug25.pdf)  | [quiz](https://forms.gle/XPib6HZtzBSH5kSD6) |
-| 8.26 | Modular arithmetic | Rosen 9.5, 4.1 | | |
+| 8.26 | Modular arithmetic | Rosen 9.5, 4.1 | [[slides]](https://drive.google.com/file/d/1740FIBGx0rhVPmV7Nj-uKy_ffHTh65Lf/view?usp=sharing) [[notes]](raw/notes_aug26.pdf) | [quiz](https://forms.gle/2XN7HwFmJbmqbofm6) |
 | 8.30 | Mod applications | Rosen 4.3-4.6 | | |
 | 8.31 | Hashing / Cryptography | | | |
 | 9.1  | RSA / Review | | | |
