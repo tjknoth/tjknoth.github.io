@@ -23,7 +23,7 @@ title: Lectures
 | 8.25 | Diagonalization / Equivalence relations | Rosen 9.1, 9.5 | [[slides]](https://drive.google.com/file/d/171sN57oWDSjH5QArK0CHXBDsJ3zFiI4C/view?usp=sharing) [[notes]](raw/notes_aug25.pdf)  | [quiz](https://forms.gle/XPib6HZtzBSH5kSD6) |
 | 8.26 | Modular arithmetic | Rosen 9.5, 4.1 | [[slides]](https://drive.google.com/file/d/1740FIBGx0rhVPmV7Nj-uKy_ffHTh65Lf/view?usp=sharing) [[notes]](raw/notes_aug26.pdf) | [quiz](https://forms.gle/2XN7HwFmJbmqbofm6) |
 | 8.30 | Mod applications | Rosen 4.3-4.6 | [[slides]](https://drive.google.com/file/d/17vpmUgxmAWxuRsL7rf2tP_TopyUh8Ojc/view?usp=sharing) [[whiteboard]](https://drive.google.com/file/d/1-g2hC--5zU-F94LugX3n3EfnZsd5jkSK/view?usp=sharing) | [quiz](https://forms.gle/28rsJpGmLQD7njEk8) |
-| 8.31 | Hashing / Cryptography | | | |
+| 8.31 | Hashing / Cryptography | | [[slides]](https://drive.google.com/file/d/18GRlmrFTmbzvxmvtP6FWMm59qWdxA4ES/view?usp=sharing) | [quiz](https://forms.gle/qgYBQFZHqYasXs1b7) |
 | 9.1  | RSA / Review | | | |
 | 9.2  | Review | | | |
 
