@@ -25,7 +25,7 @@ title: Lectures
 | 8.30 | Mod applications | Rosen 4.3-4.6 | [[slides]](https://drive.google.com/file/d/17vpmUgxmAWxuRsL7rf2tP_TopyUh8Ojc/view?usp=sharing) [[whiteboard]](https://drive.google.com/file/d/1-g2hC--5zU-F94LugX3n3EfnZsd5jkSK/view?usp=sharing) | [quiz](https://forms.gle/28rsJpGmLQD7njEk8) |
 | 8.31 | Hashing / Cryptography | | [[slides]](https://drive.google.com/file/d/18GRlmrFTmbzvxmvtP6FWMm59qWdxA4ES/view?usp=sharing) | [quiz](https://forms.gle/qgYBQFZHqYasXs1b7) |
 | 9.1  | RSA / Review | | [[slides]](https://drive.google.com/file/d/1COgDx2kP5-zMHvwZHHtJdTPDlsTJ-lvG/view?usp=sharing) [[whiteboard]](https://drive.google.com/file/d/1zMytknqueoo8kkZdKNcvr6we3Uh-E8O5/view?usp=sharing) | [quiz](https://forms.gle/G7vHLW94M5nnehK27) |
-| 9.2  | Review | | | |
+| 9.2  | Review | | [[slides]](https://drive.google.com/file/d/1B-KRgHcomroQWHejNJAHA9keIcxSI4la/view?usp=sharing) [[whiteboard]](https://drive.google.com/file/d/1NX5IULbuRmtNOrViNLH8UxYHBroje2dt/view?usp=sharing) | [quiz](https://forms.gle/hsdzYh4ooRqEVCvd9) |
 
 
 # Discussions
