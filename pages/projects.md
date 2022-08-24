@@ -2,6 +2,12 @@
 title: Projects
 ---
 # Projects
+### Type-directed Synthesis
+My dissertation will describe a _framework_ for type-directed synthesis.
+I utilize the shared structure found in many existing tools to build a platform
+for easily developing new synthesis tools and for sharing research advances
+between tools. Stay tuned.
+
 ### Resource Aware Program Synthesis
 Modern tools for the synthesis of general-purpose programs generally do not 
 take into account the implementation's resource usage. 
