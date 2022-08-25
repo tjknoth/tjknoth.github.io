@@ -1,5 +1,6 @@
 ---
 title: Lectures
+coursenum: 20
 ---
 
 # Lectures

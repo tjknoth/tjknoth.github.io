@@ -1,5 +1,6 @@
 ---
 title: Assignments
+coursenum: 20
 ---
 
 # Homework assignments

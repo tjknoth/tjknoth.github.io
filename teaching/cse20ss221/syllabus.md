@@ -1,5 +1,6 @@
 ---
 title: Syllabus
+coursenum: 20
 ---
 # Syllabus
 

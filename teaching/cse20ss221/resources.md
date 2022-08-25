@@ -1,5 +1,6 @@
 ---
 title: Resources
+coursenum: 20
 ---
 # Resources
 

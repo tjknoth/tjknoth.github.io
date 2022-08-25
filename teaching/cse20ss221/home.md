@@ -1,5 +1,6 @@
 ---
 title: CSE 20
+coursenum: 20
 ---
 # CSE 20: Summer Session 2, 2021
 
