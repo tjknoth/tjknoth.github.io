@@ -3,10 +3,20 @@
 import           Data.Monoid (mappend) 
 import           Hakyll
 import           Data.List.Split (splitOn)
+import           Text.Pandoc
 import           Text.Pandoc.Options
+import           Text.Pandoc.Walk (walk)
 
 
---------------------------------------------------------------------------------
+crunchWithCtxCustom mode ctx = do
+  route $ setExtension "html"
+  compile $ pandocCompilerWithTransform
+              defaultHakyllReaderOptions
+              defaultHakyllWriterOptions
+              (walk (toggleMode mode . haskellizeBlock) . walk haskellizeInline)
+          >>= loadAndApplyTemplate "templates/course.html" ctx
+          >>= relativizeUrls
+
 main :: IO ()
 main = do
   deploy <- readFile "src/deployScript"
@@ -32,20 +42,22 @@ main = do
 
     match "publications/*.md" $ compile pandocCompiler
 
+    match "publications/*.pdf" $ do 
+        route idRoute
+        compile copyFileCompiler
+
     match "teaching/**.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler 
-          >>= loadAndApplyTemplate "templates/cse20.html" defaultContext
+          >>= loadAndApplyTemplate "templates/course.html" defaultContext
           >>= relativizeUrls
 
     match "teaching/*/raw/*" $ do
       route idRoute
       compile copyFileCompiler
-   
-    match "publications/*.pdf" $ do 
-        route idRoute
-        compile copyFileCompiler
 
+    match "teaching/*/lectures/*.md" $ crunchWithCtxCustom "final" postCtx
+   
     create ["archive.html"] $ do
         route idRoute
         compile $ do
@@ -99,3 +111,26 @@ pandocMathCompiler =
                       writerHTMLMathMethod = MathJax ""
                     }
   in pandocCompilerWith defaultHakyllReaderOptions writerOpts
+
+--------------------------------------------------------------------------------
+
+-- | Treat an ordered list with uppercase roman numerals as a map:
+--   in each item, the first paragraph is the key, and the second is the value;
+--   pick the value with the key `mode` and discard all other items
+toggleMode :: String -> Block -> Block
+toggleMode mode (OrderedList (_, UpperRoman, _) items) = select items
+  where
+    select ([Para [Str key], payload] : rest) =
+      if key == mode then payload else select rest
+    select _ = Null
+toggleMode _ b = b
+
+haskellizeInline :: Inline -> Inline
+haskellizeInline (Code (ident, [], kvs) str) = Code (ident, ["haskell"], kvs) str
+haskellizeInline b = b
+
+haskellizeBlock :: Block -> Block
+haskellizeBlock (CodeBlock (ident, [], kvs) str) = CodeBlock (ident, ["haskell"], kvs) str
+haskellizeBlock b = b
+
+
