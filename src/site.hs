@@ -52,7 +52,7 @@ main = do
           >>= loadAndApplyTemplate "templates/course.html" defaultContext
           >>= relativizeUrls
 
-    match "teaching/cse130fa22/*" $ do
+    match "teaching/cse130fa22/**" $ do
       route   idRoute
       compile copyFileCompiler
 
