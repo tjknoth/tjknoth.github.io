@@ -46,7 +46,7 @@ main = do
         route idRoute
         compile copyFileCompiler
 
-    match "teaching/cse20/*.md" $ do
+    match "teaching/cse20ss2/*.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler 
           >>= loadAndApplyTemplate "templates/course.html" defaultContext
@@ -56,12 +56,10 @@ main = do
       route   idRoute
       compile copyFileCompiler
 
-    match "teaching/*/raw/*" $ do
+    match "teaching/cse20ss221/raw/*" $ do
       route   idRoute
       compile copyFileCompiler
 
-    match "teaching/*/lectures/*.md" $ crunchWithCtxCustom "final" postCtx
-   
     create ["archive.html"] $ do
         route idRoute
         compile $ do
