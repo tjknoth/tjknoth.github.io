@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!--
+      loads the http over https ssl -
+      welcome to my website!
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland.
+  -->
+
+
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus -->
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+
+    IE = document.documentMode;
+    } else {
+
+        IE = 5;
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11;
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Ranjit Jhala" href="http://ranjitjhala.github.io" />
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow -->
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption -->
+    <meta name="description" content="UCSD CSE 130">
+    <!-- Site Desciption -->
+    <meta name="keywords" content="haskell, refinement types, liquid types, formal methods, type systems">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="localhost:8000/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>cse130</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+-->
+    <!-- Property Metas -->
+    <meta property="og:image" content="localhost:8000/static/img/ix.png" />
+    <meta property="og:title" content="UCSD CSE 130" />
+    <meta property="og:site_name" content="UCSD CSE 130" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseUrl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="localhost:8000/static/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="localhost:8000/static/css/spaceg.stylesheets.css"> -->
+    <link rel="stylesheet" href="localhost:8000/static/css/ronacher.css" type="text/css">
+
+    <link rel="stylesheet" href="localhost:8000/static/css/syntax.css">
+    <link rel="stylesheet" href="localhost:8000/static/css/liquid-light.css">
+
+    <!-- Fonts
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style>
+<!--link rel="stylesheet" href="localhost:8000/static/css/prettify.css"-->
+<style>
+  /* HEADER IMAGE */
+  header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	li {list-style: none;}
+            body.modal-open
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here -->
+    </head>
+
+    <body>
+	    
+	<!-- 	
+        <div id="preloader">
+	    <div id="status">
+	    </div>
+	</div>  
+	-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="localhost:8000" id="blog-title-left-top">cse130</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="localhost:8000/calendar.html">Calendar</a></li>
+                <li><a href="localhost:8000/grades.html">Grading</a></li>
+                <li><a href="localhost:8000/lectures.html">Lectures</a></li>
+                <li><a href="localhost:8000/assignments.html">Assignments</a></li>
+                <li><a href="localhost:8000/links.html">Links</a></li>                
+                <li><a href="https://canvas.ucsd.edu/courses/36670" id="roundbutton" target="_blank"><i class="fa fa-twitter"></i>Canvas</a></li>
+                <li><a href="https://www.piazza.com/ucsd/fall2022/cse130/home" id="roundbutton" target="_blank"><i class="fa fa-twitter"></i>Piazza</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">Nadia Polikarpova</h1>
+                            <hr class="star-primary">
+                            <img src="localhost:8000/static/img/ico.png" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                <a href="https://www.twitter.com/polikarn" target="_blank">follow me</a>. <br>
+                                <a href="https://www.github.com/tjknoth" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a>
+                                <a href="https://www.twitter.com/polikarn" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>
+                                <a href="https://plus.google.com/u/0/104385825850161331469" target="_blank"> <i class="fa fa-google-plus" id="spaceg-social-modal"></i></a>
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">Tristan Knoth</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+                              <a href="https://www.twitter.com/polikarn" target="_blank">follow</a>. <br>
+                              <a href="https://www.github.com/tjknoth" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a>
+                              <li><a href="localhost:8000/calendar.html">Calendar</a></li>
+                              <li><a href="localhost:8000/grades.html">Grading</a></li>
+                              <li><a href="localhost:8000/lectures.html">Lectures</a></li>
+                              <li><a href="localhost:8000/assignments.html">Assignments</a></li>
+                              <li><a href="localhost:8000/links.html">Links</a></li>
+                              <li><a href="https://canvas.ucsd.edu/courses/36670" id="roundbutton" target="_blank"><i class="fa fa-twitter"></i>Canvas</a></li>
+                              <li><a href="https://www.piazza.com/ucsd/fall2022/cse130/home" id="roundbutton" target="_blank"><i class="fa fa-twitter"></i>Piazza</a></li>
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div id="content">
+            <!-- Post Header -->
+    <header class="intro-header" style="background-image: url('localhost:8000/static/img/books.jpg')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Environments and Closures</h1>
+                    
+                    <span class="meta">
+		    
+		    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h2 id="roadmap">Roadmap</h2>
+<p><strong>Past three weeks:</strong></p>
+<ul>
+<li>How do we <em>use</em> a functional language?</li>
+</ul>
+<p><strong>Next three weeks:</strong></p>
+<ul>
+<li>How do we <em>implement</em> a functional language?</li>
+<li>… in a functional language (of course)</li>
+</ul>
+<p><strong>This week: Interpreter</strong></p>
+<ul>
+<li>How do we <em>evaluate</em> a program given its abstract syntax tree (AST)?</li>
+<li>How do we <em>prove properties</em> about our interpreter (e.g. that certain programs never crash)?</li>
+</ul>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="the-nano-language">The Nano Language</h2>
+<p>Features of Nano:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Arithmetic</strong></li>
+<li>Variables</li>
+<li>Let-bindings</li>
+<li>Functions</li>
+<li>Recursion</li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="nano-arithmetic">1. Nano: Arithmetic</h2>
+<p>A grammar of arithmetic expressions:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">e <span class="ot">::</span><span class="fu">=</span> n
+    <span class="fu">|</span> e1 <span class="fu">+</span> e2
+    <span class="fu">|</span> e1 <span class="fu">-</span> e2
+    <span class="fu">|</span> e1 <span class="fu">*</span> e2</code></pre></div>
+<p><br></p>
+<p>Examples:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Expression</th>
+<th align="left"></th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code class="sourceCode haskell"><span class="dv">4</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left"><code class="sourceCode haskell"><span class="dv">4</span> <span class="fu">+</span> <span class="dv">12</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">16</td>
+</tr>
+<tr class="odd">
+<td align="left"><code class="sourceCode haskell">(<span class="dv">4</span> <span class="fu">+</span> <span class="dv">12</span>) <span class="fu">-</span> <span class="dv">5</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">11</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="representing-expressions-and-values">Representing Expressions and Values</h2>
+<p>Let’s <em>represent</em> arithmetic expressions as a type:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>
+          <span class="fu">|</span> <span class="dt">Add</span> <span class="dt">Expr</span> <span class="dt">Expr</span>
+          <span class="fu">|</span> <span class="dt">Sub</span> <span class="dt">Expr</span> <span class="dt">Expr</span>
+          <span class="fu">|</span> <span class="dt">Mul</span> <span class="dt">Expr</span> <span class="dt">Expr</span></code></pre></div>
+<p><br> <br></p>
+<p>Let’s <em>represent</em> arithmetic values as a type:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">type</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">Int</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-arithmetic-expressions">Evaluating Arithmetic Expressions</h2>
+<p>We can now write a Haskell function to <em>evaluate</em> an expression:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval (<span class="dt">Num</span> n)     <span class="fu">=</span> n
+eval (<span class="dt">Add</span> e1 e2) <span class="fu">=</span> eval e1 <span class="fu">+</span> eval e2
+eval (<span class="dt">Sub</span> e1 e2) <span class="fu">=</span> eval e1 <span class="fu">-</span> eval e2
+eval (<span class="dt">Mul</span> e1 e2) <span class="fu">=</span> eval e1 <span class="fu">*</span> eval e2</code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="alternative-representation">Alternative representation</h2>
+<p>Let’s factor out the operators into a separate type</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Binop</span> <span class="fu">=</span> <span class="dt">Add</span> <span class="fu">|</span> <span class="dt">Sub</span> <span class="fu">|</span> <span class="dt">Mul</span>
+
+<span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz">QUIZ</h2>
+<p>Evaluator for alternative representation:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval (<span class="dt">Num</span> n)        <span class="fu">=</span> n
+eval (<span class="dt">Bin</span> op e1 e2) <span class="fu">=</span> evalOp op (eval e1) (eval e2)</code></pre></div>
+<p>What’s a suitable type for <code class="sourceCode haskell">evalOp</code>?</p>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dt">Binop</span> <span class="ot">-&gt;</span> <span class="dt">Value</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dt">Binop</span> <span class="ot">-&gt;</span> <span class="dt">Value</span> <span class="ot">-&gt;</span> <span class="dt">Value</span> <span class="ot">-&gt;</span> <span class="dt">Value</span></code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dt">Binop</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span></code></p>
+<p><strong>(D)</strong> <code class="sourceCode haskell"><span class="dt">Binop</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span></code></p>
+<p><strong>(E)</strong> <code class="sourceCode haskell"><span class="dt">Binop</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span></code></p>
+<p><br></p>
+<p><em>Answer:</em> B</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="the-nano-language-1">The Nano Language</h2>
+<p>Features of Nano:</p>
+<ol style="list-style-type: decimal">
+<li>Arithmetic [done]</li>
+<li><strong>Variables</strong></li>
+<li>Let-bindings</li>
+<li>Functions</li>
+<li>Recursion</li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="nano-variables">2. Nano: Variables</h2>
+<p>Let’s add variables!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">e <span class="ot">::</span><span class="fu">=</span> n        <span class="co">-- OLD</span>
+    <span class="fu">|</span> e1 <span class="fu">+</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">-</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">*</span> e2
+    <span class="fu">|</span> x        <span class="co">-- NEW</span></code></pre></div>
+<p><br> <br> <br> <br></p>
+<p>Let’s extend the representation of expressions:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="fu">???</span>                  <span class="co">-- variable</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">type</span> <span class="dt">Id</span> <span class="fu">=</span> <span class="dt">String</span>
+
+<span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="dt">Var</span> <span class="dt">Id</span>               <span class="co">-- variable</span></code></pre></div>
+<p><br> <br> <br> <br></p>
+<p>Now let’s extend the evaluation function!</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-1">QUIZ</h2>
+<p>What should the following expression evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">x <span class="fu">+</span> <span class="dv">1</span></code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">0</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(C)</strong> Runtime error</p>
+<p><br></p>
+<p><em>Answer:</em> C</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="environment">Environment</h2>
+<p>An expression is evaluated in an <strong>environment</strong></p>
+<ul>
+<li>It’s like a phone book that maps <em>variables</em> to <em>values</em></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">[<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> <span class="dv">0</span>, <span class="st">&quot;y&quot;</span> <span class="fu">:=</span> <span class="dv">12</span>, <span class="fu">...</span>]</code></pre></div>
+<p><br></p>
+<p>We can <em>represent</em> an environment using the following type:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">type</span> <span class="dt">Env</span> <span class="fu">=</span> [(<span class="dt">Id</span>, <span class="dt">Value</span>)]</code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluation-in-an-environment">Evaluation in an Environment</h2>
+<p>We write</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">eval env expr  <span class="fu">==&gt;</span> value</code></pre></div>
+<p>To mean that evaluating <code class="sourceCode haskell">expr</code> <em>in the environment</em> <code class="sourceCode haskell">env</code> returns <code class="sourceCode haskell">value</code></p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-2">QUIZ</h2>
+<p>What should the result of?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">eval [<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> <span class="dv">0</span>, <span class="st">&quot;y&quot;</span> <span class="fu">:=</span> <span class="dv">12</span>, <span class="fu">...</span>] (x <span class="fu">+</span> <span class="dv">1</span>)</code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">0</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(C)</strong> Runtime error</p>
+<p><br></p>
+<p><em>Answer:</em> B</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<p>To evaluate a variable, <strong>look up</strong> its value in the environment!</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Environment</th>
+<th align="left">Expression</th>
+<th align="left"></th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code class="sourceCode haskell">[<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> <span class="dv">5</span>]</code></td>
+<td align="left"><code class="sourceCode haskell">x</code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left"><code class="sourceCode haskell">[<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> <span class="dv">5</span>]</code></td>
+<td align="left"><code class="sourceCode haskell">x <span class="fu">+</span> <span class="dv">12</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">17</td>
+</tr>
+<tr class="odd">
+<td align="left"><code class="sourceCode haskell">[<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> <span class="dv">5</span>]</code></td>
+<td align="left"><code class="sourceCode haskell">y <span class="fu">-</span> <span class="dv">5</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">error</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br> <br> <br></p>
+<h2 id="evaluating-variables">Evaluating Variables</h2>
+<p>We need to update our evaluation function to take the environment <em>as an argument</em>:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)        <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Bin</span> op e1 e2) <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Var</span> x)        <span class="fu">=</span> <span class="fu">???</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)        <span class="fu">=</span> n
+eval env (<span class="dt">Bin</span> op e1 e2) <span class="fu">=</span> evalOp op (eval env e1) (eval env e2)
+eval env (<span class="dt">Var</span> x)        <span class="fu">=</span> lookup x env</code></pre></div>
+<p><br> <br> <br></p>
+<p>But how do variables get into the environment?</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="the-nano-language-2">The Nano Language</h2>
+<p>Features of Nano:</p>
+<ol style="list-style-type: decimal">
+<li>Arithmetic [done]</li>
+<li>Variables [done]</li>
+<li><strong>Let-bindings</strong></li>
+<li>Functions</li>
+<li>Recursion</li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="nano-let-bindings">3. Nano: Let Bindings</h2>
+<p>Let’s add let bindings!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">e <span class="ot">::</span><span class="fu">=</span> n                <span class="co">-- OLD</span>
+    <span class="fu">|</span> e1 <span class="fu">+</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">-</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">*</span> e2
+    <span class="fu">|</span> x
+    <span class="fu">|</span> <span class="kw">let</span> x <span class="fu">=</span> e1 <span class="kw">in</span> e2 <span class="co">-- NEW</span></code></pre></div>
+<p><br></p>
+<p>Example:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Environment</th>
+<th align="left">Expression</th>
+<th align="left"></th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code class="sourceCode haskell">[]</code></td>
+<td align="left"><code class="sourceCode haskell"><span class="kw">let</span> x <span class="fu">=</span> <span class="dv">2</span> <span class="fu">+</span> <span class="dv">3</span> <span class="kw">in</span> x <span class="fu">*</span> <span class="dv">2</span></code></td>
+<td align="left"><code class="sourceCode haskell"><span class="fu">==&gt;</span></code></td>
+<td align="left">10</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br> <br> <br></p>
+<p>Let’s extend the representation of expressions:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="dt">Var</span> x                <span class="co">-- variable</span>
+          <span class="fu">|</span> <span class="fu">???</span>                  <span class="co">-- let binding</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="dt">Var</span> <span class="dt">Id</span>               <span class="co">-- variable</span>
+          <span class="fu">|</span> <span class="dt">Let</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="dt">Expr</span>     <span class="co">-- let binding</span></code></pre></div>
+<p><br> <br> <br> <br></p>
+<p>Now let’s extend the evaluation function!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)          <span class="fu">=</span> n
+eval env (<span class="dt">Bin</span> op e1 e2)   <span class="fu">=</span> evalOp op (eval env e1) (eval env e2)
+eval env (<span class="dt">Var</span> x)          <span class="fu">=</span> lookup x env
+eval env (<span class="dt">Let</span> x def body) <span class="fu">=</span> <span class="fu">???</span></code></pre></div>
+<p><br></p>
+<p>Let’s develop intuition with examples!</p>
+<p><br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-3">QUIZ</h2>
+<p>What should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> x <span class="fu">=</span> <span class="dv">5</span> 
+<span class="kw">in</span>
+  x <span class="fu">+</span> <span class="dv">1</span></code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">5</span></code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">6</span></code></p>
+<p><strong>(D)</strong> Error: unbound variable <code class="sourceCode haskell">x</code></p>
+<p><strong>(E)</strong> Error: unbound variable <code class="sourceCode haskell">y</code></p>
+<p><br></p>
+<p><em>Answer:</em> C</p>
+<p><br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-4">QUIZ</h2>
+<p>What should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> x <span class="fu">=</span> <span class="dv">5</span> 
+<span class="kw">in</span>
+  <span class="kw">let</span> y <span class="fu">=</span> x <span class="fu">+</span> <span class="dv">1</span> 
+  <span class="kw">in</span>
+    x <span class="fu">*</span> y</code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">5</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">6</span></code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">30</span></code></p>
+<p><strong>(D)</strong> Error: unbound variable <code class="sourceCode haskell">x</code></p>
+<p><strong>(E)</strong> Error: unbound variable <code class="sourceCode haskell">y</code></p>
+<p><br></p>
+<p><em>Answer:</em> C</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-5">QUIZ</h2>
+<p>What should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> x <span class="fu">=</span> <span class="dv">0</span> 
+<span class="kw">in</span>
+  (<span class="kw">let</span> x <span class="fu">=</span> <span class="dv">100</span> 
+   <span class="kw">in</span>
+     x <span class="fu">+</span> <span class="dv">1</span>
+  ) <span class="fu">+</span> x</code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">101</span></code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">201</span></code></p>
+<p><strong>(D)</strong> <code class="sourceCode haskell"><span class="dv">2</span></code></p>
+<p><strong>(E)</strong> Error: multiple definitions of <code class="sourceCode haskell">x</code></p>
+<p><br></p>
+<p><em>Answer:</em> B</p>
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="principle-static-lexical-scoping">Principle: Static (Lexical) Scoping</h2>
+<p>Every variable <em>use</em> (occurrence) gets its value from the most local <em>definition</em> (binding)</p>
+<ul>
+<li>in a <em>pure</em> language, the value never changes once defined</li>
+<li>easy to tell by looking at the program, where a variable’s value came from!</li>
+</ul>
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="implementing-lexical-scoping">Implementing Lexical Scoping</h2>
+<p><strong>Example 1</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">            <span class="co">-- environment:</span>
+<span class="kw">let</span> x <span class="fu">=</span> <span class="dv">5</span>   <span class="co">-- []</span>
+<span class="kw">in</span>          <span class="co">--   [x := 5]</span>
+  x <span class="fu">+</span> <span class="dv">1</span>     <span class="co">--   |</span></code></pre></div>
+<p><br> <br></p>
+<p><strong>Example 2</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                 <span class="co">-- environment:</span>
+<span class="kw">let</span> x <span class="fu">=</span> <span class="dv">5</span>        <span class="co">-- []</span>
+<span class="kw">in</span>               <span class="co">--   [x := 5]</span>
+  <span class="kw">let</span> y <span class="fu">=</span> x <span class="fu">+</span> <span class="dv">1</span>  <span class="co">--   |</span>
+  <span class="kw">in</span>             <span class="co">--   | [y := 6, x := 5]</span>
+    x <span class="fu">*</span> y        <span class="co">--   | |</span></code></pre></div>
+<p><em>Note:</em> <code class="sourceCode haskell">[y <span class="fu">:=</span> <span class="dv">6</span>]</code> got <em>added</em> to the environment</p>
+<p><br> <br></p>
+<p><strong>Example 3</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                 <span class="co">-- environment:</span>
+<span class="kw">let</span> x <span class="fu">=</span> <span class="dv">0</span>        <span class="co">-- []</span>
+<span class="kw">in</span>               <span class="co">--   [x := 0]</span>
+  (<span class="kw">let</span> x <span class="fu">=</span> <span class="dv">100</span>   <span class="co">--   |</span>
+   <span class="kw">in</span>            <span class="co">--   | [x := 100, x := 0]</span>
+     x <span class="fu">+</span> <span class="dv">1</span>       <span class="co">--   | |</span>
+  )              <span class="co">--   | |</span>
+  <span class="fu">+</span> x            <span class="co">--   |     </span></code></pre></div>
+<p><em>Note:</em> <code class="sourceCode haskell">[x <span class="fu">:=</span> <span class="dv">100</span>]</code> was only added for the inner scope</p>
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-let-expressions">Evaluating let Expressions</h2>
+<p>To evaluate <code class="sourceCode haskell"><span class="kw">let</span> x <span class="fu">=</span> e1 <span class="kw">in</span> e2</code> in <code class="sourceCode haskell">env</code>:</p>
+<ol style="list-style-type: decimal">
+<li>Evaluate <code class="sourceCode haskell">e1</code> in <code class="sourceCode haskell">env</code> to <code class="sourceCode haskell">val</code></li>
+<li><em>Extend</em> <code class="sourceCode haskell">env</code> with a mapping <code class="sourceCode haskell">[<span class="st">&quot;x&quot;</span> <span class="fu">:=</span> val]</code></li>
+<li>Evaluate <code class="sourceCode haskell">e2</code> in this extended environment</li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)          <span class="fu">=</span> n
+eval env (<span class="dt">Bin</span> op e1 e2)   <span class="fu">=</span> evalOp op (eval e1) (eval e2)
+eval env (<span class="dt">Var</span> x)          <span class="fu">=</span> lookup x env
+eval env (<span class="dt">Let</span> x e1 e2)    <span class="fu">=</span> eval env' e2
+  <span class="kw">where</span>
+    v    <span class="fu">=</span> eval env e1
+    env' <span class="fu">=</span> (x, v) <span class="fu">:</span> env    </code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="the-nano-language-3">The Nano Language</h2>
+<p>Features of Nano:</p>
+<ol style="list-style-type: decimal">
+<li>Arithmetic [done]</li>
+<li>Variables [done]</li>
+<li>Let binding [done]</li>
+<li><strong>Functions</strong></li>
+<li>Recursion</li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="nano-functions">4. Nano: Functions</h2>
+<p>Let’s add:</p>
+<ul>
+<li>lambda abstraction (aka function definitions)</li>
+<li>applications (aka function calls)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">e <span class="ot">::</span><span class="fu">=</span> n                <span class="co">-- OLD</span>
+    <span class="fu">|</span> e1 <span class="fu">+</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">-</span> e2 
+    <span class="fu">|</span> e1 <span class="fu">*</span> e2
+    <span class="fu">|</span> x
+    <span class="fu">|</span> <span class="kw">let</span> x <span class="fu">=</span> e1 <span class="kw">in</span> e2
+                       <span class="co">-- NEW</span>
+    <span class="fu">|</span> \x <span class="ot">-&gt;</span> e  <span class="co">-- abstraction</span>
+    <span class="fu">|</span> e1 e2    <span class="co">-- application        </span></code></pre></div>
+<p><br></p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> <span class="kw">in</span> 
+inc <span class="dv">10</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-6">QUIZ</h2>
+<p>What should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> <span class="kw">in</span> 
+inc <span class="dv">10</span></code></pre></div>
+<p><strong>(A)</strong> Undefined variable <code class="sourceCode haskell">x</code></p>
+<p><strong>(B)</strong> Undefined variable <code class="sourceCode haskell">inc</code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(D)</strong> <code class="sourceCode haskell"><span class="dv">10</span></code></p>
+<p><strong>(E)</strong> <code class="sourceCode haskell"><span class="dv">11</span></code></p>
+<p><br></p>
+<p><em>Answer:</em> E</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="representing-functions">Representing functions</h2>
+<p>Let’s extend the representation of expressions:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="dt">Var</span> <span class="dt">Id</span>               <span class="co">-- variable</span>
+          <span class="fu">|</span> <span class="dt">Let</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="dt">Expr</span>     <span class="co">-- let expression</span>
+          <span class="fu">|</span> <span class="fu">???</span>                  <span class="co">-- abstraction</span>
+          <span class="fu">|</span> <span class="fu">???</span>                  <span class="co">-- application</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Expr</span> <span class="fu">=</span> <span class="dt">Num</span> <span class="dt">Int</span>              <span class="co">-- number</span>
+          <span class="fu">|</span> <span class="dt">Bin</span> <span class="dt">Binop</span> <span class="dt">Expr</span> <span class="dt">Expr</span>  <span class="co">-- binary expression</span>
+          <span class="fu">|</span> <span class="dt">Var</span> <span class="dt">Id</span>               <span class="co">-- variable</span>
+          <span class="fu">|</span> <span class="dt">Let</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="dt">Expr</span>     <span class="co">-- let expression</span>
+          <span class="fu">|</span> <span class="dt">Lam</span> <span class="dt">Id</span> <span class="dt">Expr</span>          <span class="co">-- abstraction: formal + body</span>
+          <span class="fu">|</span> <span class="dt">App</span> <span class="dt">Expr</span> <span class="dt">Expr</span>        <span class="co">-- application: function + actual</span></code></pre></div>
+<p><br></p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> <span class="kw">in</span> 
+inc <span class="dv">10</span></code></pre></div>
+<p>represented as:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="dt">Let</span> <span class="st">&quot;inc&quot;</span> 
+  (<span class="dt">Lam</span> <span class="st">&quot;x&quot;</span> (<span class="dt">Bin</span> <span class="dt">Add</span> (<span class="dt">Var</span> <span class="st">&quot;x&quot;</span>) (<span class="dt">Num</span> <span class="dv">1</span>)))
+  (<span class="dt">App</span> (<span class="dt">Var</span> <span class="st">&quot;inc&quot;</span>) (<span class="dt">Num</span> <span class="dv">10</span>))</code></pre></div>
+<p><br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-functions">Evaluating Functions</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                      <span class="co">-- environment  </span>
+<span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> 
+<span class="kw">in</span>                    <span class="co">-- [inc := ???]</span>
+  inc <span class="dv">10</span>              <span class="co">-- use the value of inc to evaluate this</span></code></pre></div>
+<p><br></p>
+<p>What is the <strong>value</strong> of <code class="sourceCode haskell">inc</code>???</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="rethinking-our-values">Rethinking our values</h2>
+<p><strong>Until now:</strong> a program <em>evaluates</em> to an integer (or fails)</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">type</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">Int</span>
+
+<span class="kw">type</span> <span class="dt">Env</span> <span class="fu">=</span> [(<span class="dt">Id</span>, <span class="dt">Value</span>)]
+
+<span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span></code></pre></div>
+<p><br> <br></p>
+<p>What do these programs evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">(<span class="dv">1</span>)
+\x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span>
+<span class="fu">==&gt;</span> <span class="fu">???</span>
+
+(<span class="dv">2</span>)
+<span class="kw">let</span> f <span class="fu">=</span> \x y <span class="ot">-&gt;</span> x <span class="fu">+</span> y <span class="kw">in</span>
+f <span class="dv">1</span>
+<span class="fu">==&gt;</span> <span class="fu">???</span></code></pre></div>
+<p>Conceptually, they both evaluate to a function that increments its argument</p>
+<p><br> <br> <br> <br> <br> <br></p>
+<p><strong>Now:</strong> a program evaluates to an integer or <em>a function</em> (or fails)</p>
+<ul>
+<li>Remember: functions are <em>first-class</em> values</li>
+</ul>
+<p><br></p>
+<p>Let’s change our definition of values!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">VNum</span> <span class="dt">Int</span>
+           <span class="fu">|</span> <span class="dt">VFun</span> <span class="fu">???</span> <span class="co">-- What info do we need to store?</span>
+           
+<span class="co">-- Other types stay the same</span>
+<span class="kw">type</span> <span class="dt">Env</span> <span class="fu">=</span> [(<span class="dt">Id</span>, <span class="dt">Value</span>)]
+
+<span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>           </code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="function-values">Function values</h2>
+<p>How should we represent a function value?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> <span class="kw">in</span> 
+inc <span class="dv">10</span></code></pre></div>
+<p>We need to store enough information about <code class="sourceCode haskell">inc</code> so that we can later evaluate any <em>application</em> of <code class="sourceCode haskell">inc</code> (like <code class="sourceCode haskell">inc <span class="dv">0</span></code>, <code class="sourceCode haskell">inc <span class="dv">5</span></code>, <code class="sourceCode haskell">inc <span class="dv">10</span></code>, <code class="sourceCode haskell">inc (factorial <span class="dv">100</span>)</code>)</p>
+<p><br> <br> <br> <br></p>
+<p>The <strong>value</strong> of a function is its <strong>code</strong>!</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="representing-function-values-first-attempt">Representing Function Values (First Attempt)</h2>
+<p>Grammar for values:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">v <span class="ot">::</span><span class="fu">=</span> n       <span class="co">-- OLD: number</span>
+    <span class="fu">|</span> <span class="fu">&lt;</span>x, e<span class="fu">&gt;</span>  <span class="co">-- NEW: formal + body</span></code></pre></div>
+<p><br> <br></p>
+<p>Haskell representation:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">VNum</span> <span class="dt">Int</span>
+           <span class="fu">|</span> <span class="dt">VFun</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="co">-- formal + body</span></code></pre></div>
+<p><br> <br></p>
+<p>Let’s try this!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                      <span class="co">-- environment  </span>
+<span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> 
+<span class="kw">in</span>                    <span class="co">-- [inc := &lt;x, x + 1&gt;]</span>
+  inc <span class="dv">10</span>              <span class="co">-- how do we evaluate this?</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-applications">Evaluating applications</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                      <span class="co">-- environment  </span>
+<span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span> 
+<span class="kw">in</span>                    <span class="co">-- [inc := &lt;x, x + 1&gt;]</span>
+  inc <span class="dv">10</span>              <span class="co">-- how do we evaluate this?</span></code></pre></div>
+<p>To evaluate <code class="sourceCode haskell">inc <span class="dv">10</span></code>:</p>
+<ol style="list-style-type: decimal">
+<li>Evaluate <code class="sourceCode haskell">inc</code>, get <code class="sourceCode haskell"><span class="fu">&lt;</span>x, x <span class="fu">+</span> <span class="dv">1</span><span class="fu">&gt;</span></code></li>
+<li>Evaluate <code class="sourceCode haskell"><span class="dv">10</span></code>, get <code class="sourceCode haskell"><span class="dv">10</span></code></li>
+<li>Evaluate <code class="sourceCode haskell">x <span class="fu">+</span> <span class="dv">1</span></code> in an environment <em>extended</em> with <code class="sourceCode haskell">[x <span class="fu">:=</span> <span class="dv">10</span>]</code></li>
+</ol>
+<p><br> <br> <br> <br> <br></p>
+<p>Let’s extend our <code class="sourceCode haskell">eval</code> function!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)          <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Bin</span> op e1 e2)   <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Var</span> x)          <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Let</span> x e1 e2)    <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">Lam</span> x e)        <span class="fu">=</span> <span class="fu">???</span>
+eval env (<span class="dt">App</span> e1 e2)      <span class="fu">=</span> <span class="fu">???</span>    </code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Num</span> n)        <span class="fu">=</span> <span class="dt">VNum</span> n
+eval env (<span class="dt">Var</span> x)        <span class="fu">=</span> lookup x env
+eval env (<span class="dt">Bin</span> op e1 e2) <span class="fu">=</span> <span class="dt">VNum</span> (evalOp op v1 v2)
+  <span class="kw">where</span>
+    (<span class="dt">VNum</span> v1) <span class="fu">=</span> eval env e1
+    (<span class="dt">VNum</span> v2) <span class="fu">=</span> eval env e2
+eval env (<span class="dt">Let</span> x e1 e2) <span class="fu">=</span> eval env' e2
+  <span class="kw">where</span>
+    v <span class="fu">=</span> eval env e1
+    env' <span class="fu">=</span> (x, v) <span class="fu">:</span> env
+eval env (<span class="dt">Lam</span> x body) <span class="fu">=</span> <span class="dt">VFun</span> x body
+eval env (<span class="dt">App</span> fun arg) <span class="fu">=</span> eval env' body
+  <span class="kw">where</span>
+    <span class="dt">VFun</span> x body <span class="fu">=</span> eval env fun  <span class="co">-- DO NOT DO THIS in HW! </span>
+                                <span class="co">-- introduce a helper instead </span>
+                                <span class="co">-- to match different value patterns </span>
+    vArg        <span class="fu">=</span> eval env arg
+    env'        <span class="fu">=</span> (x, vArg) <span class="fu">:</span> env</code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-7">QUIZ</h2>
+<p>What should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span> 
+<span class="kw">in</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c
+  <span class="kw">in</span>
+    inc <span class="dv">10</span></code></pre></div>
+<p><strong>(A)</strong> Undefined variable <code class="sourceCode haskell">x</code></p>
+<p><strong>(B)</strong> Undefined variable <code class="sourceCode haskell">c</code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">1</span></code></p>
+<p><strong>(D)</strong> <code class="sourceCode haskell"><span class="dv">10</span></code></p>
+<p><strong>(E)</strong> <code class="sourceCode haskell"><span class="dv">11</span></code></p>
+<p><br></p>
+<p><em>Answer:</em> E</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-8">QUIZ</h2>
+<p>And what should this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span> 
+<span class="kw">in</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c
+  <span class="kw">in</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>
+      inc <span class="dv">10</span></code></pre></div>
+<p><strong>(A)</strong> Error: multiple definitions of <code class="sourceCode haskell">c</code></p>
+<p><strong>(B)</strong> <code class="sourceCode haskell"><span class="dv">11</span></code></p>
+<p><strong>(C)</strong> <code class="sourceCode haskell"><span class="dv">110</span></code></p>
+<p><br></p>
+<p><em>Answer:</em> B</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="reminder-referential-transparency">Reminder: Referential Transparency</h2>
+<p>The same expression must <em>always</em> evaluate to the same value</p>
+<ul>
+<li>In particular: a function must <em>always</em> return the same output for a given input</li>
+</ul>
+<p><br> <br></p>
+<p>Why?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="fu">&gt;</span> myFunc <span class="dv">10</span>
+<span class="dv">11</span>
+
+<span class="fu">&gt;</span> myFunc <span class="dv">10</span>
+<span class="dv">110</span></code></pre></div>
+<p>Oh no! How do I find the bug???</p>
+<ul>
+<li>Is it in <code class="sourceCode haskell">myFunc</code>?</li>
+<li>Is it in a global variable?</li>
+<li>Is it in a library somewhere else?</li>
+</ul>
+<p>My worst debugging nightmare!</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="static-vs-dynamic-scoping">Static vs Dynamic Scoping</h2>
+<p>What we want:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>               <span class="co">-- &lt;-------------------</span>
+<span class="kw">in</span>                      <span class="co">--                    \</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c <span class="co">-- refers to this def \ </span>
+  <span class="kw">in</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>
+      inc <span class="dv">10</span>
+      
+<span class="fu">==&gt;</span> <span class="dv">11</span></code></pre></div>
+<p><br> <br></p>
+<p><strong>Lexical</strong> (or <strong>static</strong>) scoping:</p>
+<ul>
+<li>each occurrence of a variable refers to the most recent binding <em>in the program text</em></li>
+<li>definition of each variable is unique and known <em>statically</em></li>
+<li>guarantees referential transparency:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>               <span class="co">-- &lt;-------------------</span>
+<span class="kw">in</span>                      <span class="co">--                    \</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c <span class="co">-- refers to this def \ </span>
+  <span class="kw">in</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>
+      <span class="kw">let</span> res1 <span class="fu">=</span> inc <span class="dv">10</span>      <span class="co">-- ==&gt; 11</span>
+      <span class="kw">in</span>
+        <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">200</span>
+        <span class="kw">in</span> 
+           <span class="kw">let</span> res2 <span class="fu">=</span> inc <span class="dv">10</span> <span class="co">-- ==&gt; 11</span>
+           <span class="kw">in</span> res1 <span class="fu">==</span> res2   <span class="co">-- ==&gt; True</span></code></pre></div>
+<p><br> <br> <br> <br></p>
+<p>What we <strong>don’t</strong> want:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>               
+<span class="kw">in</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c <span class="co">-- refers to this def \ </span>
+  <span class="kw">in</span>                    <span class="co">--                    \</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>         <span class="co">-- &lt;-------------------</span>
+    <span class="kw">in</span>
+      inc <span class="dv">10</span>
+      
+<span class="fu">==&gt;</span> <span class="dv">110</span></code></pre></div>
+<p><br> <br></p>
+<p><strong>Dynamic</strong> scoping:</p>
+<ul>
+<li>each occurrence of a variable refers to the most recent binding <em>during program execution</em></li>
+<li>can’t tell where a variable is defined just by looking at the function body</li>
+<li><em>violates</em> referential transparency:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>               
+<span class="kw">in</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c     <span class="co">-- refers to this def \  \</span>
+  <span class="kw">in</span>                        <span class="co">--                    \  \</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>             <span class="co">-- &lt;-------------------  \</span>
+    <span class="kw">in</span>                      <span class="co">--                       \</span>
+      <span class="kw">let</span> res1 <span class="fu">=</span> inc <span class="dv">10</span>     <span class="co">-- ==&gt; 110               \</span>
+      <span class="kw">in</span>                    <span class="co">--                       \</span>
+        <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">200</span>         <span class="co">-- &lt;----------------------</span>
+        <span class="kw">in</span> 
+          <span class="kw">let</span> res2 <span class="fu">=</span> inc <span class="dv">10</span> <span class="co">-- ==&gt; 210!!!</span>
+          <span class="kw">in</span> res1 <span class="fu">==</span> res2   <span class="co">-- ==&gt; False</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-9">QUIZ</h2>
+<p>Which scoping does our <code class="sourceCode haskell">eval</code> function implement?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="fu">...</span>
+eval env (<span class="dt">Lam</span> x body) <span class="fu">=</span> <span class="dt">VFun</span> x body
+eval env (<span class="dt">App</span> fun arg) <span class="fu">=</span> eval env' body
+  <span class="kw">where</span>
+    <span class="dt">VFun</span> x body <span class="fu">=</span> eval env fun
+    vArg        <span class="fu">=</span> eval env arg
+    env'        <span class="fu">=</span> (x, vArg) <span class="fu">:</span> env</code></pre></div>
+<p><strong>(A)</strong> Static</p>
+<p><strong>(B)</strong> Dynamic</p>
+<p><strong>(C)</strong> Neither</p>
+<p><br></p>
+<p><em>Answer:</em> B</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<p>Let’s find out!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                         <span class="co">-- env:</span>
+<span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>                <span class="co">--                                          []</span>
+<span class="kw">in</span>                       <span class="co">--                                  [&quot;c&quot; := 1]</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c
+  <span class="kw">in</span>                     <span class="co">--             [&quot;inc&quot; := &lt;x, x + c&gt;, &quot;c&quot; := 1]</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>                   <span class="co">-- [&quot;c&quot; := 100, &quot;inc&quot; := &lt;x, x + c&gt;, &quot;c&quot; := 1]</span>
+      inc             <span class="dv">10</span>
+      
+<span class="co">-- 1. ==&gt; &lt;x, x + c&gt;</span>
+
+<span class="co">-- 2.                 ==&gt; 10</span>
+
+<span class="co">-- 3. x + c      [&quot;x&quot; := 10, &quot;c&quot; := 100, &quot;inc&quot; := &lt;x, x + c&gt;, &quot;c&quot; := 1]      </span>
+
+<span class="co">--    ==&gt; 110</span></code></pre></div>
+<p>Ouch.</p>
+<p>What went wrong?</p>
+<p><br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>
+<span class="kw">in</span>                       <span class="co">--                                  [&quot;c&quot; := 1]</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c  <span class="co">-- we want this &quot;c&quot; to ALWAYS mean 1!</span>
+  <span class="kw">in</span>                     <span class="co">--             [&quot;inc&quot; := &lt;x, x + c&gt;, &quot;c&quot; := 1]</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>                   <span class="co">-- [&quot;c&quot; := 100, &quot;inc&quot; := &lt;x, x + c&gt;, &quot;c&quot; := 1]</span>
+      inc <span class="dv">10</span>       <span class="co">-- but now it means 100 because we are in a new env!</span></code></pre></div>
+<p><br> <br> <br> <br></p>
+<p><strong>Lesson learned:</strong> need to remember what <code class="sourceCode haskell">c</code> was bound to when <code class="sourceCode haskell">inc</code> was <strong>defined</strong>!</p>
+<ul>
+<li>i.e. “freeze” the environment at the point of function definition</li>
+</ul>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="implementing-static-scoping">Implementing Static Scoping</h2>
+<p>Key ideas:</p>
+<ul>
+<li><strong>At definition:</strong> Freeze the environment in the function’s value</li>
+<li><strong>At call:</strong> Use the <em>frozen</em> environment to evaluate the body
+<ul>
+<li>instead of the <em>current</em> environment</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">                         <span class="co">-- env:</span>
+<span class="kw">let</span> c <span class="fu">=</span> <span class="dv">1</span>                <span class="co">--                                          []</span>
+<span class="kw">in</span>                       <span class="co">--                                  [&quot;c&quot; := 1]</span>
+  <span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> c
+  <span class="kw">in</span>                     <span class="co">--        [&quot;inc&quot; := &lt;fro, x, x + c&gt;, &quot;c&quot; := 1]</span>
+                         <span class="co">--             where fro = [&quot;c&quot; := 1]</span>
+    <span class="kw">let</span> c <span class="fu">=</span> <span class="dv">100</span>
+    <span class="kw">in</span>                   <span class="co">-- [&quot;c&quot; := 100, &quot;inc&quot; := &lt;fro, x, x + c&gt;, ...]</span>
+      inc             <span class="dv">10</span>
+      
+<span class="co">-- 1. ==&gt; &lt;fro, x, x + c&gt;</span>
+
+<span class="co">-- 2.                 ==&gt; 10</span>
+<span class="co">--               add &quot;x&quot; to fro instead of env:</span>
+<span class="co">-- 3. x + c      [&quot;x&quot; := 10, &quot;c&quot; := 1]      </span>
+
+<span class="co">--    ==&gt; 11</span></code></pre></div>
+<p>Tada!</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="function-values-as-closures">Function Values as Closures</h2>
+<p>To implement lexical scoping, we will represent function values as <em>closures</em></p>
+<p><strong>Closure</strong> = <em>lambda abstraction</em> (formal + body) + <em>environment</em> at function definition</p>
+<p><br> <br></p>
+<p><em>Updated</em> grammar for values:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">v <span class="ot">::</span><span class="fu">=</span> n
+    <span class="fu">|</span> <span class="fu">&lt;</span>env, x, e<span class="fu">&gt;</span>  <span class="co">-- NEW: frozen env + formal + body</span>
+    
+env <span class="ot">::</span><span class="fu">=</span> []
+      <span class="fu">|</span> (x <span class="fu">:=</span> v) <span class="fu">:</span> env</code></pre></div>
+<p><br> <br></p>
+<p><em>Updated</em> Haskell representation:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">VNum</span> <span class="dt">Int</span>
+           <span class="fu">|</span> <span class="dt">VClos</span> <span class="dt">Env</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="co">-- frozen env + formal + body</span></code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-function-definitions">Evaluating function definitions</h2>
+<p>How should we modify our <code class="sourceCode haskell">eval</code> for <code class="sourceCode haskell"><span class="dt">Lam</span></code>?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">VNum</span> <span class="dt">Int</span>
+           <span class="fu">|</span> <span class="dt">VClos</span> <span class="dt">Env</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="co">-- env + formal + body</span>
+           
+<span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">Lam</span> x body) <span class="fu">=</span> <span class="fu">???</span> <span class="co">-- construct a closure</span></code></pre></div>
+<p><br></p>
+<p>Recall: <strong>At definition:</strong> Freeze the environment in the function’s value</p>
+<p>Exact code for you to figure out in HW4</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="evaluating-function-calls">Evaluating function calls</h2>
+<p>How should we modify our <code class="sourceCode haskell">eval</code> for <code class="sourceCode haskell"><span class="dt">App</span></code>?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">data</span> <span class="dt">Value</span> <span class="fu">=</span> <span class="dt">VNum</span> <span class="dt">Int</span>
+           <span class="fu">|</span> <span class="dt">VClos</span> <span class="dt">Env</span> <span class="dt">Id</span> <span class="dt">Expr</span> <span class="co">-- env + formal + body</span>
+           
+<span class="ot">eval ::</span> <span class="dt">Env</span> <span class="ot">-&gt;</span> <span class="dt">Expr</span> <span class="ot">-&gt;</span> <span class="dt">Value</span>
+eval env (<span class="dt">App</span> e1 e2) <span class="fu">=</span> <span class="fu">???</span> <span class="co">-- apply the closure</span></code></pre></div>
+<p><br></p>
+<p>Recall: <strong>At call:</strong> Use the <em>frozen</em> environment to evaluate the body</p>
+<p>Exact code for you to figure out in HW4</p>
+<p><br> <br></p>
+<p><strong>Hint:</strong> Recall evaluating <code class="sourceCode haskell">inc <span class="dv">10</span></code>:</p>
+<ol style="list-style-type: decimal">
+<li>Evaluate <code class="sourceCode haskell">inc</code> to get <code class="sourceCode haskell"><span class="fu">&lt;</span>fro, x, x <span class="fu">+</span> c<span class="fu">&gt;</span></code></li>
+<li>Evaluate <code class="sourceCode haskell"><span class="dv">10</span></code> to get <code class="sourceCode haskell"><span class="dv">10</span></code></li>
+<li>Evaluate <code class="sourceCode haskell">x <span class="fu">+</span> c</code> in <code class="sourceCode haskell">(x <span class="fu">:=</span> <span class="dv">10</span>) <span class="fu">:</span> fro</code></li>
+</ol>
+<p><br> <br></p>
+<p>Let’s generalize to <code class="sourceCode haskell">e1 e2</code>:</p>
+<ol style="list-style-type: decimal">
+<li>Evaluate <code class="sourceCode haskell">e1</code> to get <code class="sourceCode haskell"><span class="fu">&lt;</span>fro, param, body<span class="fu">&gt;</span></code></li>
+<li>Evaluate <code class="sourceCode haskell">e2</code> to get <code class="sourceCode haskell">v2</code></li>
+<li>Evaluate <code class="sourceCode haskell">body</code> in <code class="sourceCode haskell">(param <span class="fu">:=</span> v2) <span class="fu">:</span> fro</code></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="advanced-features-of-functions">Advanced Features of Functions</h2>
+<ul>
+<li>Functions returning functions</li>
+<li>aka <em>partial applications</em></li>
+<li>Functions taking functions as arguments</li>
+<li>aka <em>higher-order functions</em></li>
+<li>Recursion</li>
+</ul>
+<p>Does our <code class="sourceCode haskell">eval</code> support this?</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-10">QUIZ</h2>
+<p>What should the following evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> add <span class="fu">=</span> \x y <span class="ot">-&gt;</span> x <span class="fu">+</span> y
+<span class="kw">in</span>
+  <span class="kw">let</span> add1 <span class="fu">=</span> add <span class="dv">1</span>
+  <span class="kw">in</span>
+    <span class="kw">let</span> add10 <span class="fu">=</span> add <span class="dv">10</span>
+    <span class="kw">in</span>
+      add1 <span class="dv">100</span> <span class="fu">+</span> add10 <span class="dv">1000</span></code></pre></div>
+<p><strong>(A)</strong> Runtime error</p>
+<p><strong>(B)</strong> 1102</p>
+<p><strong>(C)</strong> 1120</p>
+<p><strong>(D)</strong> 1111</p>
+<p><br></p>
+<p><em>Answer:</em> D</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="partial-applications-achieved">Partial Applications Achieved!</h2>
+<p>Closures support functions returning functions!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> add <span class="fu">=</span> \x <span class="ot">-&gt;</span> (\y <span class="ot">-&gt;</span> x <span class="fu">+</span> y) <span class="co">--                           env0 = []</span>
+<span class="kw">in</span>                         <span class="co">-- env1 = [&quot;add&quot; := &lt;[], x, \y -&gt; x + y&gt;]</span>
+  <span class="kw">let</span> add1 <span class="fu">=</span> 
+        add <span class="dv">1</span> <span class="co">-- eval (&quot;x&quot; := 1 : env0) (\y -&gt; x + y) </span>
+              <span class="co">--   ==&gt; &lt;[&quot;x&quot; := 1], y, x + y&gt;</span>
+  <span class="kw">in</span>       <span class="co">-- env2 = [&quot;add1&quot; := &lt;[&quot;x&quot; := 1], y, x + y&gt;, &quot;add&quot; := ...]</span>
+    <span class="kw">let</span> add10 <span class="fu">=</span> 
+      add <span class="dv">10</span> <span class="co">-- eval (&quot;x&quot; := 10 : env0) (\y -&gt; x + y) </span>
+             <span class="co">--   ==&gt; &lt;[&quot;x&quot; := 10], y, x + y&gt;</span>
+    <span class="kw">in</span>  <span class="co">-- env3 = [&quot;add10&quot; := &lt;[&quot;x&quot; := 10], y, x + y&gt;, &quot;add1&quot; := ...]</span>
+      add1 <span class="dv">100</span> <span class="co">-- eval [&quot;y&quot; := 100, &quot;x&quot; := 1] (x + y) </span>
+               <span class="co">--   ==&gt; 101</span>
+      <span class="fu">+</span> 
+      add10 <span class="dv">1000</span> <span class="co">-- eval [&quot;y&quot; := 1000, &quot;x&quot; := 10] (x + y) </span>
+                 <span class="co">--  ==&gt; 1010</span>
+
+<span class="fu">==&gt;</span> <span class="dv">1111</span>                 </code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-11">QUIZ</h2>
+<p>What should the following evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span>
+<span class="kw">in</span>
+  <span class="kw">let</span> doTwice <span class="fu">=</span> \f <span class="ot">-&gt;</span> (\x <span class="ot">-&gt;</span> f (f x))
+  <span class="kw">in</span>
+    doTwice inc <span class="dv">10</span></code></pre></div>
+<p><strong>(A)</strong> Runtime error</p>
+<p><strong>(B)</strong> 11</p>
+<p><strong>(C)</strong> 12</p>
+<p><br></p>
+<p><em>Answer:</em> C</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="higher-order-functions-achieved">Higher-order Functions Achieved</h2>
+<p>Closures support functions taking functions as arguments!</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> inc <span class="fu">=</span> \x <span class="ot">-&gt;</span> x <span class="fu">+</span> <span class="dv">1</span>                                <span class="co">-- env0 = []</span>
+<span class="kw">in</span>                              <span class="co">-- env1 = [inc := &lt;[], x, x + 1&gt;]</span>
+  <span class="kw">let</span> doTwice <span class="fu">=</span> \f <span class="ot">-&gt;</span> (\x <span class="ot">-&gt;</span> f (f x))
+  <span class="kw">in</span>  <span class="co">-- env2 = [doTwice := &lt;env1, f, \x -&gt; f (f x)&gt;, inc := ...]</span>
+    ((doTwice inc) <span class="co">-- eval (&quot;f&quot; := &lt;[],x,x + 1&gt; : env1) (\x -&gt; f (f x))</span>
+                   <span class="co">-- ==&gt; &lt;(&quot;f&quot; := &lt;[],x,x + 1&gt; : env1), x, f (f x)&gt;</span>
+                   
+      <span class="dv">10</span>)          <span class="co">-- eval [&quot;x&quot; := 10, &quot;f&quot; := &lt;[],x,x + 1&gt;, ...] f (f x)</span>
+      
+<span class="co">-- f   ==&gt; &lt;[], x, x + 1&gt;</span>
+<span class="co">-- x   ==&gt; 10</span>
+<span class="co">-- &lt;[], x, x + 1&gt; 10 ==&gt; eval [&quot;x&quot; := 10] x + 1 ==&gt; 11</span>
+<span class="co">-- &lt;[], x, x + 1&gt; 11 ==&gt; eval [&quot;x&quot; := 11] x + 1 ==&gt; 12</span>
+    
+<span class="fu">==&gt;</span> <span class="dv">12</span>    </code></pre></div>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="quiz-12">QUIZ</h2>
+<p>What does this evaluate to?</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> f <span class="fu">=</span> \n <span class="ot">-&gt;</span> n <span class="fu">*</span> f (n <span class="fu">-</span> <span class="dv">1</span>) 
+<span class="kw">in</span>
+  f <span class="dv">5</span></code></pre></div>
+<p><strong>(A)</strong> <code class="sourceCode haskell"><span class="dv">120</span></code></p>
+<p><strong>(B)</strong> Evaluation does not terminate</p>
+<p><strong>(C)</strong> Error: unbound variable <code class="sourceCode haskell">f</code></p>
+<p><br></p>
+<p><em>Answer:</em> C</p>
+<p><br> <br> <br> <br> <br> <br> <br></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> f <span class="fu">=</span> \n <span class="ot">-&gt;</span> n <span class="fu">*</span> f (n <span class="fu">-</span> <span class="dv">1</span>) 
+<span class="kw">in</span> <span class="co">-- [f := &lt;[], n, n * f (n - 1)&gt;]</span>
+  f <span class="dv">5</span> <span class="co">-- eval [n := 5] (n * f (n - 1))</span>
+      <span class="co">--  ==&gt; unbound variable f!!!</span></code></pre></div>
+<p><strong>Lesson learned:</strong> to support recursion, you need to figure out a way to put the function itself <em>back</em> into its closure environment before the body gets evaluated!</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<h2 id="the-nano-language-4">The Nano Language</h2>
+<p>Features of Nano:</p>
+<ol style="list-style-type: decimal">
+<li>Arithmetic [done]</li>
+<li>Variables [done]</li>
+<li>Let bindings [done]</li>
+<li>Functions [done]</li>
+<li>Recursion <strong>[you figure it out in HW4]</strong></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<p>That’s all folks!</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</article>
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="localhost:8000/feed.xml" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/polikarn" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://plus.google.com/u/0/104385825850161331469" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tjknoth" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                              <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+		    
+                </ul>
+                <p class="copyright text-muted">
+                
+                  Generated by <a href="http://jaspervdj.be/hakyll">Hakyll</a>,
+                  template by <a href="http://lucumr.pocoo.org">Armin Ronacher</a>,
+                  suggest improvements <a href="https://github.com/ucsd-progsys/liquidhaskell-blog/">here</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- jQuery -->
+<script src="localhost:8000/static/js/jquery.min.js"></script>
+<script src="localhost:8000/static/js/spaceg.stylesheets.min.js"></script>
+<script src="localhost:8000/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="localhost:8000/static/js/anim.js"></script>
+<script src="localhost:8000/static/js/scripts.js"></script>
+
+    </body>
+</html>
