@@ -46,7 +46,7 @@ main = do
         route idRoute
         compile copyFileCompiler
 
-    match "teaching/cse20ss2/*.md" $ do
+    match "teaching/cse20ss221/*.md" $ do
       route $ setExtension "html"
       compile $ pandocCompiler 
           >>= loadAndApplyTemplate "templates/course.html" defaultContext
@@ -59,20 +59,6 @@ main = do
     match "teaching/cse20ss221/raw/*" $ do
       route   idRoute
       compile copyFileCompiler
-
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
