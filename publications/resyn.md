@@ -6,4 +6,3 @@ venue: PLDI 2019
 [[pdf]](/raw/resyn.pdf)
 [[extended]](https://arxiv.org/abs/1904.07415)
 [[slides]](/raw/resyn_slides.pdf)
-[[demo]](http://comcom.csail.mit.edu/comcom/#ReSyn)
